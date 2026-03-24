@@ -689,6 +689,55 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
   line-height:2.4;
   letter-spacing:.06em;
 }
+
+/* ===== LANG TOGGLE ===== */
+.lang-toggle {
+  position: fixed;
+  top: 16px;
+  right: clamp(20px, 4vw, 56px);
+  z-index: 1000;
+  display: flex;
+  border: 1px solid rgba(184,149,58,.4);
+  overflow: hidden;
+  background: rgba(58,46,42,.85);
+  backdrop-filter: blur(12px);
+}
+.lang-btn {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .58rem;
+  letter-spacing: .22em;
+  padding: .38rem .82rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(184,149,58,.6);
+  transition: all .2s;
+  line-height: 1;
+}
+.lang-btn.active { background: var(--gold); color: var(--white); }
+.lang-btn:not(.active):hover { color: var(--gold); }
+
+/* EN mode */
+.en-only { display: none; }
+body.en .en-only { display: block; }
+body.en .ja-only { display: none; }
+span.en-only { display: inline; }
+span.ja-only { display: inline; }
+body.en span.en-only { display: inline; }
+body.en span.ja-only { display: none; }
+/* inline block variants */
+p.en-only { display: none; }
+body.en p.en-only { display: block; }
+body.en p.ja-only { display: none; }
+div.en-only { display: none; }
+body.en div.en-only { display: block; }
+body.en div.ja-only { display: none; }
+li.en-only { display: none; }
+body.en li.en-only { display: list-item; }
+body.en li.ja-only { display: none; }
+em.en-only { display: none; }
+body.en em.en-only { display: block; }
+body.en em.ja-only { display: none; }
 </style>
 </head>
 <body>
@@ -705,6 +754,12 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
     <span class="mob-line-text">LINEでご相談ください</span>
     <span class="mob-line-arrow">→</span>
   </a>
+</div>
+
+<!-- LANG TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-ja" onclick="setLang('ja')">JA</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
 </div>
 
 <!-- NAV -->
@@ -737,8 +792,10 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
     <span>Beauty that</span>
     <span><em>compounds.</em></span>
   </h1>
-  <p class="s01-jp fu-fade d1 zen">髪と私の、秘密の時間。</p>
-  <p class="s01-empathy fu-fade d2 zen">「なんか違う」が、続いている方へ。</p>
+  <p class="s01-jp fu-fade d1 zen ja-only">髪と私の、秘密の時間。</p>
+  <p class="s01-jp fu-fade d1 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">The quiet hour that belongs to you alone.</p>
+  <p class="s01-empathy fu-fade d2 zen ja-only">「なんか違う」が、続いている方へ。</p>
+  <p class="s01-empathy fu-fade d2 en-only" style="font-family:'Cormorant Garamond',serif;">For those who've always felt something was missing.</p>
   <div class="s01-scroll fu-fade d3">
     <span>Scroll</span>
     <div class="s01-line"></div>
@@ -771,10 +828,14 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 <!-- ===== INTERLUDE  Pattern Interrupt ===== -->
 <section class="itl">
   <p class="itl-sub fu-fade en">A question for you</p>
-  <h2 class="itl-q zen fu-fade d1">
+  <h2 class="itl-q zen fu-fade d1 ja-only">
     <span>あなたはまだ、</span>
     <span>自分の本当の美しさに、</span>
     <span>出会っていないかもしれない。</span>
+  </h2>
+  <h2 class="itl-q fu-fade d1 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;">
+    <span>What if your best hair</span>
+    <span>is still ahead of you?</span>
   </h2>
   <div class="itl-dys fu-fade d2">
     <p class="itl-dys-t en">— Discover Your Sanctuary —</p>
@@ -785,27 +846,56 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 <section class="s02">
   <div class="s02-in">
     <span class="lbl fu">The Wound</span>
-    <h2 class="s02-h zen fu d1">毎回のちょっとした違和感…。</h2>
-    <p class="s02-p fu d2">
+
+    <h2 class="s02-h zen fu d1 ja-only">毎回のちょっとした違和感…。</h2>
+    <h2 class="s02-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">That quiet feeling something isn't quite right.</h2>
+
+    <p class="s02-p fu d2 ja-only">
       <span class="line">同じ説明をしているはずなのに、毎回仕上がりが違う。</span>
       <span class="line">「似合いますよ」と言われると、なぜか断れない。</span>
       <span class="line">サロンでは綺麗なのに、家で再現できない。</span>
       <span class="line">次の来店までの間、鏡を見るたびに小さくため息をつく。</span>
     </p>
-    <p class="s02-p fu d3">
+    <p class="s02-p fu d2 en-only">
+      <span class="line">You explain it the same way every time — yet the result keeps changing.</span>
+      <span class="line">When they say "this suits you," somehow you can't say no.</span>
+      <span class="line">It looks beautiful at the salon. But at home, you can never quite recreate it.</span>
+      <span class="line">Between appointments, every mirror is a small sigh.</span>
+    </p>
+
+    <p class="s02-p fu d3 ja-only">
       <span class="line">これは、あなたの伝え方の問題ではありません。</span>
       <span class="line">「ちゃんと聞いてもらえる構造」が、なかっただけです。</span>
     </p>
-    <div class="s02-q zen fu d4">「言えていないことを、言える場所がある。」</div>
-    <p class="s02-p fu d5">
+    <p class="s02-p fu d3 en-only">
+      <span class="line">This is not a you problem.</span>
+      <span class="line">You simply haven't found a place that was built to truly listen.</span>
+    </p>
+
+    <div class="s02-q zen fu d4 ja-only">「言えていないことを、言える場所がある。」</div>
+    <div class="s02-q fu d4 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">"There is a place where the things you couldn't say — can finally be said."</div>
+
+    <p class="s02-p fu d5 ja-only">
       <span class="line">髪がきまると、朝の支度が変わる。</span>
       <span class="line">出かけることが楽しくなる。</span>
       <span class="line">会いたい人に、会いに行ける。</span>
       <span class="line">新しいことに、踏み出せる気がする。</span>
     </p>
-    <p class="s02-p-em zen fu d6">── そして最近、笑顔がふえた気がする。</p>
-    <p class="s02-p-em zen fu d6" style="margin-top:1.5rem;">
+    <p class="s02-p fu d5 en-only">
+      <span class="line">When your hair feels right, mornings feel different.</span>
+      <span class="line">Going out becomes something to look forward to.</span>
+      <span class="line">You find yourself reaching out to people you'd been meaning to see.</span>
+      <span class="line">Something new feels possible.</span>
+    </p>
+
+    <p class="s02-p-em zen fu d6 ja-only">── そして最近、笑顔がふえた気がする。</p>
+    <p class="s02-p-em fu d6 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">── And somewhere along the way, you start to smile more.</p>
+
+    <p class="s02-p-em zen fu d6 ja-only" style="margin-top:1.5rem;">
       bridgeが届けたいのは、その<em>トキ</em>です。
+    </p>
+    <p class="s02-p-em fu d6 en-only" style="margin-top:1.5rem;font-family:'Cormorant Garamond',serif;">
+      That feeling — of finally clicking into yourself — is what bridge is here for.
     </p>
   </div>
 </section>
@@ -818,38 +908,53 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          「次回もぜひ」と言われると、来なければいけない気がしてしまう。
-          <span class="s03-q-sub">bridgeは、あなたのペースで来てください。急かしません。</span>
+          <span class="ja-only">「次回もぜひ」と言われると、来なければいけない気がしてしまう。
+          <span class="s03-q-sub">bridgeは、あなたのペースで来てください。急かしません。</span></span>
+          <span class="en-only">"See you next time" — and suddenly you feel obligated.
+          <span class="s03-q-sub">At bridge, you come when you're ready. We never push.</span></span>
         </div>
       </div>
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          追加メニューを勧められるたびに、断る言葉を探してしまう。
-          <span class="s03-q-sub">bridgeは、必要のないものを勧めません。</span>
+          <span class="ja-only">追加メニューを勧められるたびに、断る言葉を探してしまう。
+          <span class="s03-q-sub">bridgeは、必要のないものを勧めません。</span></span>
+          <span class="en-only">Every visit, you brace yourself for the upsell.
+          <span class="s03-q-sub">At bridge, we only suggest what we genuinely believe you need.</span></span>
         </div>
       </div>
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          いつも同じような提案で、「本当に私を見てくれている？」と感じた。
-          <span class="s03-q-sub">bridgeは、毎回、同じようで同じでない施術をしています。</span>
+          <span class="ja-only">いつも同じような提案で、「本当に私を見てくれている？」と感じた。
+          <span class="s03-q-sub">bridgeは、毎回、同じようで同じでない施術をしています。</span></span>
+          <span class="en-only">The same suggestions every time — and you wonder if they ever really see you.
+          <span class="s03-q-sub">At bridge, every appointment is shaped around who you are right now.</span></span>
         </div>
       </div>
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          「なんか違う」と思いながら、何も言えずに帰ってきた。
-          <span class="s03-q-sub">bridgeは、あなたの「違う」を最後まで受け取ります。</span>
+          <span class="ja-only">「なんか違う」と思いながら、何も言えずに帰ってきた。
+          <span class="s03-q-sub">bridgeは、あなたの「違う」を最後まで受け取ります。</span></span>
+          <span class="en-only">You left with that feeling — something was off — and said nothing.
+          <span class="s03-q-sub">At bridge, your "something's not right" is always welcome.</span></span>
         </div>
       </div>
     </div>
-    <p class="s03-end zen fu-still d2">
+    <p class="s03-end zen fu-still d2 ja-only">
       しないことを選ぶのは、
       <strong>あなたの時間を、守るためです。</strong>
     </p>
+    <p class="s03-end fu-still d2 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
+      Everything we choose not to do<br>
+      <strong style="font-weight:400;">is done in service of your time.</strong>
+    </p>
     <div class="sub-cta fu d3">
-      <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="sub-cta-link" target="_blank">まず、30秒の診断をしてみる →</a>
+      <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="sub-cta-link" target="_blank">
+        <span class="ja-only">まず、30秒の診断をしてみる →</span>
+        <span class="en-only">Take the 30-second diagnosis →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -861,17 +966,29 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
       <p class="s04-tag fu en">bridge hair salon</p>
       <h2 class="s04-name zen fu d1">TAKA</h2>
       <div class="s04-role en fu d2"></div>
-      <p class="s04-p fu d3">
+      <p class="s04-p fu d3 ja-only">
         <span class="line">東京・ニューヨーク・大阪での20年以上のキャリア。</span>
         <span class="line">著名人の施術、異文化の髪質との対話、</span>
         <span class="line">「他店で失敗した」お客様の信頼回復を、</span>
         <span class="line">数えきれないほど経験してきました。</span>
       </p>
-      <p class="s04-p fu d4">
+      <p class="s04-p fu d3 en-only">
+        <span class="line">Twenty years across Tokyo, New York, and Osaka.</span>
+        <span class="line">Celebrity clients. Every hair type imaginable.</span>
+        <span class="line">Countless guests who came in saying, "I've been let down before."</span>
+        <span class="line">Each one left differently.</span>
+      </p>
+      <p class="s04-p fu d4 ja-only">
         <span class="line">私が届けたいのは、技術ではありません。</span>
         <span class="line">あなたの人生が、少し軽くなった。</span>
         <span class="line">そう思ってもらえる、そのトキ。</span>
         <span class="line">それがbridgeの、本当の仕事です。</span>
+      </p>
+      <p class="s04-p fu d4 en-only">
+        <span class="line">What I want to give you isn't technique.</span>
+        <span class="line">It's that moment when you walk out</span>
+        <span class="line">and life feels just a little lighter.</span>
+        <span class="line">That's the real work of bridge.</span>
       </p>
       <div class="s04-credits fu d5">
         <div class="s04-credit-row">
@@ -907,35 +1024,54 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
   <div class="s05-in">
     <div class="s05-hd">
       <span class="lbl fu">Philosophy</span>
-      <h2 class="s05-h zen fu d1">bridgeに来ると、何かが変わる。</h2>
+      <h2 class="s05-h zen fu d1 ja-only">bridgeに来ると、何かが変わる。</h2>
+      <h2 class="s05-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">Something shifts when you come to bridge.</h2>
       <div class="div-c fu d2"></div>
     </div>
     <div class="s05-grid">
       <div class="s05-c fu d1">
         <p class="s05-cn en">01</p>
-        <h3 class="s05-ct zen">あなたの「らしさ」が、続く</h3>
-        <p class="s05-cb">
+        <h3 class="s05-ct zen ja-only">あなたの「らしさ」が、続く</h3>
+        <h3 class="s05-ct en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">A style that stays true to you</h3>
+        <p class="s05-cb ja-only">
           <span class="line">確かな技術と知識で、本質を極めたサービスを届けます。</span>
           <span class="line">髪に負担をかけず、あなたらしい美しさを持続させる。</span>
           <span class="line">「今日だけ」ではなく、ずっと続くスタイルを一緒に設計します。</span>
         </p>
+        <p class="s05-cb en-only">
+          <span class="line">Not a style for today — a style designed to last.</span>
+          <span class="line">Grounded in technique, attuned to your hair's health.</span>
+          <span class="line">We build something that keeps feeling like you.</span>
+        </p>
       </div>
       <div class="s05-c fu d2">
         <p class="s05-cn en">02</p>
-        <h3 class="s05-ct zen">あなたの声が、届く</h3>
-        <p class="s05-cb">
+        <h3 class="s05-ct zen ja-only">あなたの声が、届く</h3>
+        <h3 class="s05-ct en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Your voice is heard</h3>
+        <p class="s05-cb ja-only">
           <span class="line">日常に寄り添いながら、時には新しい自分への提案も。</span>
           <span class="line">「似合いますよ」ではなく、「あなたはどうしたいですか」から始める。</span>
           <span class="line">それが、bridgeが考える誠実さです。</span>
         </p>
+        <p class="s05-cb en-only">
+          <span class="line">We don't start with "this suits you."</span>
+          <span class="line">We start with "what do you want?"</span>
+          <span class="line">That distinction is what honesty looks like to us.</span>
+        </p>
       </div>
       <div class="s05-c fu d3">
         <p class="s05-cn en">03</p>
-        <h3 class="s05-ct zen">あなたの時間が、戻ってくる</h3>
-        <p class="s05-cb">
+        <h3 class="s05-ct zen ja-only">あなたの時間が、戻ってくる</h3>
+        <h3 class="s05-ct en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Your mornings become your own again</h3>
+        <p class="s05-cb ja-only">
           <span class="line">毎朝のスタイリングが、少し楽になる。</span>
           <span class="line">その分だけ、自分のための時間が生まれる。</span>
           <span class="line">bridgeが届けたいのは、その積み重なっていくトキです。</span>
+        </p>
+        <p class="s05-cb en-only">
+          <span class="line">When your hair takes less effort each morning,</span>
+          <span class="line">that time becomes yours.</span>
+          <span class="line">Those small moments, accumulating — that's what bridge is for.</span>
         </p>
       </div>
     </div>
@@ -946,21 +1082,34 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 <section class="s06">
   <div class="s06-in">
     <span class="lbl fu">The Method</span>
-    <h2 class="s06-main zen fu d1">はじめに、聞かせてください。</h2>
-    <p class="s06-sub zen fu d2">施術は、その後から始まります。</p>
+    <h2 class="s06-main zen fu d1 ja-only">はじめに、聞かせてください。</h2>
+    <h2 class="s06-main fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">First, tell me everything.</h2>
+    <p class="s06-sub zen fu d2 ja-only">施術は、その後から始まります。</p>
+    <p class="s06-sub fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">The scissors come after.</p>
     <div class="s06-body fu d3">
-      <p class="s06-body-p">
+      <p class="s06-body-p ja-only">
         <span class="line">最初にすることは、ハサミを持つことではありません。</span>
         <span class="line">あなたが今日ここに来た理由を、聞かせてもらうことです。</span>
       </p>
+      <p class="s06-body-p en-only">
+        <span class="line">The first thing I do isn't pick up a pair of scissors.</span>
+        <span class="line">It's ask why you're here today.</span>
+      </p>
       <ul class="s06-qs fu d4">
-        <li class="s06-q-item">どんな朝を過ごしているか。</li>
-        <li class="s06-q-item">大切にしている自分らしさは何か。</li>
-        <li class="s06-q-item">変えてみたいと思っていること、変えたくないこと。</li>
+        <li class="s06-q-item ja-only">どんな朝を過ごしているか。</li>
+        <li class="s06-q-item en-only">What does your morning look like?</li>
+        <li class="s06-q-item ja-only">大切にしている自分らしさは何か。</li>
+        <li class="s06-q-item en-only">What part of yourself do you most want to hold onto?</li>
+        <li class="s06-q-item ja-only">変えてみたいと思っていること、変えたくないこと。</li>
+        <li class="s06-q-item en-only">What would you love to change — and what would you never want to lose?</li>
       </ul>
-      <p class="s06-body-p fu d5">
+      <p class="s06-body-p fu d5 ja-only">
         <span class="line">言葉にならなくても大丈夫です。</span>
         <span class="line">それを一緒に見つけることが、bridgeの最初の仕事です。</span>
+      </p>
+      <p class="s06-body-p fu d5 en-only">
+        <span class="line">You don't need the right words.</span>
+        <span class="line">Finding them together is where we begin.</span>
       </p>
     </div>
     <p class="s06-em en fu-still d6">"Your hair. Your story. Your bridge."</p>
@@ -972,9 +1121,13 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
   <div class="s07-texture"></div>
   <div class="s07-in fu-still">
     <span class="lbl lbl-l fu-still" style="text-transform:none;letter-spacing:.2em;">Your Sanctuary</span>
-    <h2 class="s07-copy zen fu-still d1">
+    <h2 class="s07-copy zen fu-still d1 ja-only">
       <span class="line">何も持ち込まなくていい。</span>
       <span class="line">ここでは、あなたのままでいい。</span>
+    </h2>
+    <h2 class="s07-copy fu-still d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
+      <span class="line">Leave everything at the door.</span>
+      <span class="line">Here, you are enough exactly as you are.</span>
     </h2>
     <p class="s07-en en fu-still d2">— bridge —</p>
   </div>
@@ -987,15 +1140,18 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
     <div class="s08-nums fu d1">
       <div class="s08-num">
         <p class="s08-n en">20+</p>
-        <p class="s08-nl zen">ひとりの美容師として積み上げてきた年月</p>
+        <p class="s08-nl zen ja-only">ひとりの美容師として積み上げてきた年月</p>
+        <p class="s08-nl en-only" style="font-family:'Cormorant Garamond',serif;">Years as a solo stylist, undivided</p>
       </div>
       <div class="s08-num">
         <p class="s08-n en">5</p>
-        <p class="s08-nl zen">一日に向き合う、最大の人数</p>
+        <p class="s08-nl zen ja-only">一日に向き合う、最大の人数</p>
+        <p class="s08-nl en-only" style="font-family:'Cormorant Garamond',serif;">Guests per day — maximum, always</p>
       </div>
       <div class="s08-num">
         <p class="s08-n en">5.0</p>
-        <p class="s08-nl zen">Googleで頂いている、すべての評価</p>
+        <p class="s08-nl zen ja-only">Googleで頂いている、すべての評価</p>
+        <p class="s08-nl en-only" style="font-family:'Cormorant Garamond',serif;">Google rating — every single review</p>
         <p class="s08-nl zen" style="font-size:.78rem;color:var(--gold);letter-spacing:.08em;margin-top:.3rem;">（47件・2025年現在）</p>
       </div>
     </div>
@@ -1003,34 +1159,52 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
     <div class="s08-grid fu d3">
       <div class="s08-r">
         <p class="s08-r-st">★★★★★</p>
-        <p class="s08-r-p">
+        <p class="s08-r-p ja-only">
           <span class="line">初めて伺いましたがとても心地よく過ごせました。</span>
           <span class="line">日頃のヘアアレンジのアドバイスなども下さり、とても親切でした。</span>
           <span class="line"><strong style="color:var(--dbrown);font-weight:400;">施術後、朝のスタイリングが格段に楽になりました。</strong></span>
         </p>
-        <p class="s08-r-a en">— 30代・女性 / Hot Pepper Beauty</p>
+        <p class="s08-r-p en-only">
+          <span class="line">My first visit — and I felt completely at ease.</span>
+          <span class="line">TAKA gave me practical styling tips I actually use every morning.</span>
+          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">Getting ready takes half the time it used to.</strong></span>
+        </p>
+        <p class="s08-r-a en">— 30s · Female / Hot Pepper Beauty</p>
       </div>
       <div class="s08-r">
         <p class="s08-r-st">★★★★★</p>
-        <p class="s08-r-p">
+        <p class="s08-r-p ja-only">
           <span class="line">NYに住み始めて以来、TAKAさんにずっとお世話になってます。</span>
           <span class="line">毎回丁寧に親切に楽しく、私のわがままや要望を聞いて下さってます。</span>
           <span class="line"><strong style="color:var(--dbrown);font-weight:400;">他のサロンでは諦めていたことが、ここでは叶いました。</strong></span>
+        </p>
+        <p class="s08-r-p en-only">
+          <span class="line">I've trusted TAKA with my hair since my New York days.</span>
+          <span class="line">Every appointment feels personal — he actually listens.</span>
+          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">Things I'd given up on at other salons became possible here.</strong></span>
         </p>
         <p class="s08-r-a en">— Google Review</p>
       </div>
       <div class="s08-r">
         <p class="s08-r-st">★★★★★</p>
-        <p class="s08-r-p">
+        <p class="s08-r-p ja-only">
           <span class="line">こんな髪型がしたい、こうなりたい、という気持ちを汲んでくださり素敵な髪型にしていただきました。</span>
           <span class="line"><strong style="color:var(--dbrown);font-weight:400;">前髪がセットしやすくなり、職場で「髪変えた？」と言われるようになりました。</strong></span>
           <span class="line">技術が高くお人柄も素敵な方なので、私もまたお願いしたいです。</span>
         </p>
-        <p class="s08-r-a en">— 40代・女性 / Hot Pepper Beauty</p>
+        <p class="s08-r-p en-only">
+          <span class="line">He understood exactly what I was hoping for — even the parts I couldn't quite put into words.</span>
+          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">My bangs are so easy to style now. Colleagues keep asking what changed.</strong></span>
+          <span class="line">Exceptional skill, and a genuinely warm person. I'll be back.</span>
+        </p>
+        <p class="s08-r-a en">— 40s · Female / Hot Pepper Beauty</p>
       </div>
     </div>
     <div class="sub-cta sub-cta-dark fu d4">
-      <a href="https://lin.ee/KR1qGTc" class="sub-cta-link sub-cta-link-dark" target="_blank">LINEで相談してみる</a>
+      <a href="https://lin.ee/KR1qGTc" class="sub-cta-link sub-cta-link-dark" target="_blank">
+        <span class="ja-only">LINEで相談してみる</span>
+        <span class="en-only">Start a conversation on LINE</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1042,47 +1216,74 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
     <div class="s09-ep fu d1">
       <div class="s09-ep-line">
         <span class="s09-ep-en">New York</span>
-        言葉が通じなかった。
+        <span class="ja-only">言葉が通じなかった。</span>
+        <span class="en-only">The language didn't come.</span>
       </div>
       <div class="s09-ep-line">
         <span class="s09-ep-en">15 years</span>
-        技術と自信は、あった。
+        <span class="ja-only">技術と自信は、あった。</span>
+        <span class="en-only">The skill was there. The confidence too.</span>
       </div>
       <div class="s09-ep-line">
         <span class="s09-ep-en">And yet</span>
-        知らないうちに、小さくなっていた。
+        <span class="ja-only">知らないうちに、小さくなっていた。</span>
+        <span class="en-only">Somehow, I had made myself smaller.</span>
       </div>
     </div>
     <div class="s09-brave-box fu-brave d-brave">
-      <p class="s09-brave-pre zen">あるお客様が、一言だけ言った。</p>
+      <p class="s09-brave-pre zen ja-only">あるお客様が、一言だけ言った。</p>
+      <p class="s09-brave-pre en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:rgba(253,250,247,.5);">A client said just one word to me.</p>
       <em class="s09-brave-word en">Brave.</em>
     </div>
-    <p class="s09-note zen fu d3">
+    <p class="s09-note zen fu d3 ja-only">
       <span class="line">果敢に来い——そういう意味だと思った。</span>
       <span class="line">プロとして15年以上の実績があったのに、</span>
       <span class="line"><strong>怖さが、身体に出ていた。</strong></span>
       <span class="line">その一言が、ずっと記憶に残っている。</span>
     </p>
+    <p class="s09-note fu d3 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
+      <span class="line">I thought it meant: be bold. Come forward.</span>
+      <span class="line">Fifteen years as a professional —</span>
+      <span class="line"><strong style="font-weight:400;">and still, the fear was showing in my body.</strong></span>
+      <span class="line">That single word never left me.</span>
+    </p>
     <div class="s09-shift fu d4">
-      <p class="s09-shift-line">言葉は通じなくていい。</p>
-      <p class="s09-shift-line">手で、技術で、聞く姿勢で届ける。</p>
-      <p class="s09-shift-line">目の前の一人に、100%を注ぎ込む。</p>
+      <p class="s09-shift-line ja-only">言葉は通じなくていい。</p>
+      <p class="s09-shift-line en-only" style="font-family:'Cormorant Garamond',serif;">Words weren't the point.</p>
+      <p class="s09-shift-line ja-only">手で、技術で、聞く姿勢で届ける。</p>
+      <p class="s09-shift-line en-only" style="font-family:'Cormorant Garamond',serif;">Hands, craft, and the posture of listening — that's how you reach someone.</p>
+      <p class="s09-shift-line ja-only">目の前の一人に、100%を注ぎ込む。</p>
+      <p class="s09-shift-line en-only" style="font-family:'Cormorant Garamond',serif;">One person in front of me. Everything I have.</p>
     </div>
-    <p class="s09-result zen fu d5">数ヶ月後、予約が1ヶ月先まで埋まっていた。</p>
+    <p class="s09-result zen fu d5 ja-only">数ヶ月後、予約が1ヶ月先まで埋まっていた。</p>
+    <p class="s09-result fu d5 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">A few months later, I was booked a month out.</p>
     <div class="s09-decl fu-still d6">
-      <p class="s09-decl-q zen">
+      <p class="s09-decl-q zen ja-only">
         <span class="line">あのお客様が私に言ってくれたように、</span>
         <span class="line">私も今、あなたに言いたい。</span>
       </p>
-      <p class="s09-decl-q zen" style="margin-top:1.5rem;">
+      <p class="s09-decl-q en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
+        <span class="line">What that client gave me,</span>
+        <span class="line">I want to offer to you.</span>
+      </p>
+      <p class="s09-decl-q zen ja-only" style="margin-top:1.5rem;">
         <span class="line">まだ、出会っていない自分がいる気がする人へ。</span>
         <span class="line">bridgeは、そんな人のための場所です。</span>
+      </p>
+      <p class="s09-decl-q en-only" style="margin-top:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:300;">
+        <span class="line">If you sense there's a version of yourself</span>
+        <span class="line">you haven't met yet —</span>
+        <span class="line">bridge is where that meeting begins.</span>
       </p>
       <p class="s09-sig en fu-still d6">— TAKA</p>
     </div>
     <div class="s09-cta fu-still d6">
-      <span class="s09-cta-lead">まず、あなたの「タイプ」を知ってみませんか。</span>
-      <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="s09-cta-link" target="_blank">診断してみる（無料・30秒）→</a>
+      <span class="s09-cta-lead ja-only">まず、あなたの「タイプ」を知ってみませんか。</span>
+      <span class="s09-cta-lead en-only" style="font-family:'Cormorant Garamond',serif;">Curious about your hair personality?</span>
+      <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="s09-cta-link" target="_blank">
+        <span class="ja-only">診断してみる（無料・30秒）→</span>
+        <span class="en-only">Take the free diagnosis (30 sec) →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1091,24 +1292,33 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 <section class="s10">
   <div class="s10-in">
     <span class="lbl lbl-l fu">Selection</span>
-    <h2 class="s10-h zen fu d1">このページを最後まで読んでくれたあなたへ、正直に伝えます。</h2>
+    <h2 class="s10-h zen fu d1 ja-only">このページを最後まで読んでくれたあなたへ、正直に伝えます。</h2>
+    <h2 class="s10-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">If you've read this far, here's the honest truth.</h2>
     <div class="s10-grid">
       <div class="fu d2">
         <p class="s10-ct for en">bridge is for you —</p>
         <ul class="s10-list s10-for">
-          <li>毎回「なんか違う」を繰り返してきた方</li>
-          <li>髪のことで、長く信頼できる一人を探している方</li>
-          <li>自分のライフスタイルに合ったスタイルを作りたい方</li>
-          <li>丁寧に生きることを、大切にしている方</li>
+          <li class="ja-only">毎回「なんか違う」を繰り返してきた方</li>
+          <li class="en-only">You've felt "something's off" after every appointment</li>
+          <li class="ja-only">髪のことで、長く信頼できる一人を探している方</li>
+          <li class="en-only">You're looking for one person to trust with your hair, long-term</li>
+          <li class="ja-only">自分のライフスタイルに合ったスタイルを作りたい方</li>
+          <li class="en-only">You want a style that fits your actual life</li>
+          <li class="ja-only">丁寧に生きることを、大切にしている方</li>
+          <li class="en-only">You care about doing things with intention</li>
         </ul>
       </div>
       <div class="fu d3">
         <p class="s10-ct not en">Not a fit if —</p>
         <ul class="s10-list s10-not">
-          <li>まず価格で選びたい方には、より良い選択肢があると思います</li>
-          <li>短時間でパパッと済ませたい方</li>
-          <li>流行りのスタイルをそのままコピーしたい方</li>
-          <li>毎回新しいスタイリストを試したい方</li>
+          <li class="ja-only">まず価格で選びたい方には、より良い選択肢があると思います</li>
+          <li class="en-only">Price is your first filter — there are better options for you</li>
+          <li class="ja-only">短時間でパパッと済ませたい方</li>
+          <li class="en-only">You need something quick and efficient</li>
+          <li class="ja-only">流行りのスタイルをそのままコピーしたい方</li>
+          <li class="en-only">You want to copy a trending style, exactly</li>
+          <li class="ja-only">毎回新しいスタイリストを試したい方</li>
+          <li class="en-only">You like trying a different stylist each time</li>
         </ul>
       </div>
     </div>
@@ -1120,33 +1330,49 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 <section class="s11" id="diagnosis">
   <div class="s11-in">
     <span class="lbl fu">Self-Diagnosis</span>
-    <h2 class="s11-h zen fu d1">
+    <h2 class="s11-h zen fu d1 ja-only">
       <span class="line">自分でも気づいていない、</span>
       <span class="line">髪との関係があるかもしれません。</span>
     </h2>
-    <p class="s11-sub fu d2">
+    <h2 class="s11-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
+      <span class="line">Your relationship with your hair</span>
+      <span class="line">might be telling you something.</span>
+    </h2>
+    <p class="s11-sub fu d2 ja-only">
       <span class="line">bridgeには3つの診断があります。</span>
       <span class="line">正解はありません。ただ、やってみると</span>
       <span class="line">「そうか、こういうことか」と思う瞬間があるかもしれない。</span>
     </p>
-    <p class="s11-line fu d2">気になったことがあれば、そのままLINEで話しかけてみてください。</p>
+    <p class="s11-sub fu d2 en-only">
+      <span class="line">Bridge offers three short diagnoses.</span>
+      <span class="line">There are no right answers — just moments</span>
+      <span class="line">where something clicks.</span>
+    </p>
+    <p class="s11-line fu d2 ja-only">気になったことがあれば、そのままLINEで話しかけてみてください。</p>
+    <p class="s11-line fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">If something resonates, feel free to reach out on LINE.</p>
     <div class="s11-cards">
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/step1.html" class="s11-cd fu d1" target="_blank">
         <p class="s11-cd-n en">01</p>
-        <h3 class="s11-cd-t zen">言えていないこと診断</h3>
-        <p class="s11-cd-p">美容室でうまく伝えられない原因を6タイプに分類。あなたの「コミュニケーションのクセ」がわかります。</p>
+        <h3 class="s11-cd-t zen ja-only">言えていないこと診断</h3>
+        <h3 class="s11-cd-t en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">The Unsaid</h3>
+        <p class="s11-cd-p ja-only">美容室でうまく伝えられない原因を6タイプに分類。あなたの「コミュニケーションのクセ」がわかります。</p>
+        <p class="s11-cd-p en-only">Why is it so hard to say what you mean at the salon? Six types, one honest answer.</p>
         <span class="s11-cd-a en">Diagnose →</span>
       </a>
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/step2.html" class="s11-cd fu d2" target="_blank">
         <p class="s11-cd-n en">02</p>
-        <h3 class="s11-cd-t zen">髪のお悩み診断</h3>
-        <p class="s11-cd-p">ボリューム・白髪・うねり・ダメージなど、今のお悩みに合ったメニューと対策をご提案します。</p>
+        <h3 class="s11-cd-t zen ja-only">髪のお悩み診断</h3>
+        <h3 class="s11-cd-t en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Hair Concerns</h3>
+        <p class="s11-cd-p ja-only">ボリューム・白髪・うねり・ダメージなど、今のお悩みに合ったメニューと対策をご提案します。</p>
+        <p class="s11-cd-p en-only">Volume, gray, frizz, damage — find the menu and approach that fits what you're dealing with now.</p>
         <span class="s11-cd-a en">Diagnose →</span>
       </a>
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/step3.html" class="s11-cd fu d3" target="_blank">
         <p class="s11-cd-n en">03</p>
-        <h3 class="s11-cd-t zen">ライフスタイル診断</h3>
-        <p class="s11-cd-p">あなたの日常・価値観・望む変化から、bridgeがどうお役に立てるかを一緒に見つけていきます。</p>
+        <h3 class="s11-cd-t zen ja-only">ライフスタイル診断</h3>
+        <h3 class="s11-cd-t en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Lifestyle</h3>
+        <p class="s11-cd-p ja-only">あなたの日常・価値観・望む変化から、bridgeがどうお役に立てるかを一緒に見つけていきます。</p>
+        <p class="s11-cd-p en-only">Your daily life, your values, the change you're hoping for — let's find where bridge fits in.</p>
         <span class="s11-cd-a en">Diagnose →</span>
       </a>
     </div>
@@ -1157,7 +1383,8 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 <section class="s12">
   <div class="s12-in">
     <div class="s12-dot fu-still"></div>
-    <p class="s12-q zen fu-still d1">人生をもっと楽しんでほしい。その気持ちが、bridgeの出発点です。</p>
+    <p class="s12-q zen fu-still d1 ja-only">人生をもっと楽しんでほしい。その気持ちが、bridgeの出発点です。</p>
+    <p class="s12-q fu-still d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">I want you to enjoy your life more. That's where bridge begins.</p>
     <span class="s12-en fu-still d2 en">Your hair. Your story. Your bridge.</span>
     <div class="s12-dot fu-still d3"></div>
   </div>
@@ -1168,45 +1395,71 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
   <div class="s13-in">
     <p class="s13-pre en fu-fade">Discover Your Sanctuary</p>
     <div class="s13-origin zen">
-      <p class="s13-origin-p fu d1">
+      <p class="s13-origin-p fu d1 ja-only">
         <span class="line">bridgeという名前には、想いがある。</span>
       </p>
-      <p class="s13-origin-p fu d2">
+      <p class="s13-origin-p fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
+        <span class="line">The name bridge means something.</span>
+      </p>
+      <p class="s13-origin-p fu d2 ja-only">
         <span class="line">今のあなたと、あなたのなりたい姿の間をつなげたい。</span>
         <span class="line">20年以上の経験が、その力になり</span>
         <span class="line">あなたの未来が、もう少し楽しくなるなら。</span>
         <span class="line">全力で、ともに歩みます。</span>
       </p>
-      <p class="s13-origin-em fu d3">それが、bridgeの存在理由です。</p>
+      <p class="s13-origin-p fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
+        <span class="line">Between who you are now</span>
+        <span class="line">and who you want to become —</span>
+        <span class="line">that's where I want to stand.</span>
+        <span class="line">Twenty years of experience, entirely yours.</span>
+      </p>
+      <p class="s13-origin-em fu d3 ja-only">それが、bridgeの存在理由です。</p>
+      <p class="s13-origin-em fu d3 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">That is why bridge exists.</p>
     </div>
     <div class="s13-div fu d2"></div>
     <div class="s13-p fu d3">
-      <p>
+      <p class="ja-only">
         <span class="line">「こんなこと聞いていいのかな」と思うことほど、</span>
         <span class="line">実は大切なことだったりします。</span>
         <span class="line">あなたのペースで、あなたの言葉で。</span>
       </p>
+      <p class="en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
+        <span class="line">The things you hesitate to ask</span>
+        <span class="line">are often the most important ones.</span>
+        <span class="line">At your pace. In your words.</span>
+      </p>
     </div>
-    <a href="https://lin.ee/KR1qGTc" class="btn-line fu d3" target="_blank"><span>まずLINEでご相談ください</span></a>
+    <a href="https://lin.ee/KR1qGTc" class="btn-line fu d3" target="_blank">
+      <span class="ja-only">まずLINEでご相談ください</span>
+      <span class="en-only">Say hello on LINE</span>
+    </a>
     <div class="s13-how fu d4">
-      <p class="s13-how-p zen">
+      <p class="s13-how-p zen ja-only">
         <span class="line">LINEを開いて「はじめまして」と送るだけで大丈夫です。</span>
         <span class="line">何を書けばいいかわからなくても、それで十分です。</span>
         <span class="line">通常24時間以内にお返事します。</span>
       </p>
+      <p class="s13-how-p en-only" style="font-family:'Cormorant Garamond',serif;">
+        <span class="line">Just open LINE and send "Hello." That's enough.</span>
+        <span class="line">Not sure what to write? That's fine too.</span>
+        <span class="line">I typically reply within 24 hours.</span>
+      </p>
     </div>
     <a href="https://www.instagram.com/takahair_bridge/" class="s13-note en fu d5" target="_blank" style="text-decoration:none;">Instagram: @takahair_bridge</a>
-    <p class="s13-sig zen fu d6">— あなた以上のあなたへ。</p>
+    <p class="s13-sig zen fu d6 ja-only">— あなた以上のあなたへ。</p>
+    <p class="s13-sig fu d6 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">— To the you that you haven't met yet.</p>
   </div>
 </section>
 
 <div class="ft-diagnosis">
-  <p class="ft-diagnosis-p zen">今すぐLINEが難しい方は、<a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">診断だけでも試してみてください</a>。</p>
+  <p class="ft-diagnosis-p zen ja-only">今すぐLINEが難しい方は、<a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">診断だけでも試してみてください</a>。</p>
+  <p class="ft-diagnosis-p en-only" style="font-family:'Cormorant Garamond',serif;">Not ready for LINE yet? <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">Try the diagnosis first →</a></p>
 </div>
 
 <footer>
   <p class="ft-logo en">bridge</p>
-  <p class="ft-tag">ライフスタイルに彩とデザインを</p>
+  <p class="ft-tag ja-only">ライフスタイルに彩とデザインを</p>
+  <p class="ft-tag en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">Colour and design for the life you're living.</p>
   <div class="ft-links">
     <a href="https://www.personalhairstylist.info/menu" target="_blank">Menu</a>
     <a href="https://www.personalhairstylist.info/place" target="_blank">Access</a>
@@ -1251,6 +1504,21 @@ const hbg = document.getElementById('hbg');
 const mm = document.getElementById('mm');
 function closeMM() { hbg.classList.remove('op'); mm.classList.remove('op'); }
 hbg.addEventListener('click', () => { hbg.classList.toggle('op'); mm.classList.toggle('op'); });
+
+// Lang toggle
+function setLang(lang) {
+  document.body.classList.toggle('en', lang === 'en');
+  document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang === 'en' ? 'en' : 'ja';
+  try { localStorage.setItem('bridge-lang', lang); } catch(e) {}
+}
+(function() {
+  try {
+    var saved = localStorage.getItem('bridge-lang');
+    if (saved === 'en') setLang('en');
+  } catch(e) {}
+})();
 </script>
 </body>
 </html>
