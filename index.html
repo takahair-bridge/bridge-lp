@@ -738,6 +738,25 @@ body.en li.ja-only { display: none; }
 em.en-only { display: none; }
 body.en em.en-only { display: block; }
 body.en em.ja-only { display: none; }
+
+/* ★2026-08-13 追加：英語圏の窓口はInstagram（LINEが使えないため）。
+   日本語表示は一切変えず、英語表示のときだけInstagramへ向ける。 */
+.bg-ig{ background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF) !important;
+        border-color:transparent !important; }
+.mob-line-bar > a.ja-only{ display:flex; }
+.mob-line-bar > a.en-only{ display:none; }
+body.en .mob-line-bar > a.ja-only{ display:none; }
+body.en .mob-line-bar > a.en-only{ display:flex; }
+a.sub-cta-link.ja-only{ display:inline-block; }
+a.sub-cta-link.en-only{ display:none; }
+body.en a.sub-cta-link.ja-only{ display:none; }
+body.en a.sub-cta-link.en-only{ display:inline-block; }
+a.btn-line.ja-only{ display:inline-block; }
+a.btn-line.en-only{ display:none; }
+body.en a.btn-line.ja-only{ display:none; }
+body.en a.btn-line.en-only{ display:inline-block; }
+.btn-line-ig{ background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF) !important;
+  border-color:transparent !important; }
 </style>
 </head>
 <body>
@@ -749,9 +768,14 @@ body.en em.ja-only { display: none; }
 <!-- MOBILE STICKY LINE BAR -->
 <!-- MOBILE STICKY LINE BAR -->
 <div class="mob-line-bar" id="mobLineBar">
-  <a href="https://lin.ee/KR1qGTc" target="_blank">
+  <a href="https://lin.ee/KR1qGTc" target="_blank" class="ja-only">
     <div class="mob-line-dot"></div>
     <span class="mob-line-text">LINEでご相談ください</span>
+    <span class="mob-line-arrow">→</span>
+  </a>
+  <a href="https://www.instagram.com/takahair_bridge/" target="_blank" rel="noopener" class="en-only">
+    <div class="mob-line-dot"></div>
+    <span class="mob-line-text">Message us on Instagram</span>
     <span class="mob-line-arrow">→</span>
   </a>
 </div>
@@ -807,7 +831,7 @@ body.en em.ja-only { display: none; }
 <div class="mq">
   <div class="mq-t">
     <span class="mq-i">Tokyo → New York → Osaka</span><span class="mq-d">✦</span>
-    <span class="mq-i">Since 2001</span><span class="mq-d">✦</span>
+    <span class="mq-i">Since 2002</span><span class="mq-d">✦</span>
     <span class="mq-i">One-to-One</span><span class="mq-d">✦</span>
     <span class="mq-i">Google ★ 5.0（49件）</span><span class="mq-d">✦</span>
     <span class="mq-i">一日5名限定</span><span class="mq-d">✦</span>
@@ -815,7 +839,7 @@ body.en em.ja-only { display: none; }
     <span class="mq-i">English OK</span><span class="mq-d">✦</span>
     <span class="mq-i">Osaka · Kitahama</span><span class="mq-d">✦</span>
     <span class="mq-i">Tokyo → New York → Osaka</span><span class="mq-d">✦</span>
-    <span class="mq-i">Since 2001</span><span class="mq-d">✦</span>
+    <span class="mq-i">Since 2002</span><span class="mq-d">✦</span>
     <span class="mq-i">One-to-One</span><span class="mq-d">✦</span>
     <span class="mq-i">Google ★ 5.0（49件）</span><span class="mq-d">✦</span>
     <span class="mq-i">一日5名限定</span><span class="mq-d">✦</span>
@@ -1201,9 +1225,11 @@ body.en em.ja-only { display: none; }
       </div>
     </div>
     <div class="sub-cta sub-cta-dark fu d4">
-      <a href="https://lin.ee/KR1qGTc" class="sub-cta-link sub-cta-link-dark" target="_blank">
-        <span class="ja-only">LINEで相談してみる</span>
-        <span class="en-only">Start a conversation on LINE</span>
+      <a href="https://lin.ee/KR1qGTc" class="sub-cta-link sub-cta-link-dark ja-only" target="_blank">
+        LINEで相談してみる
+      </a>
+      <a href="https://www.instagram.com/takahair_bridge/" class="sub-cta-link sub-cta-link-dark en-only" target="_blank" rel="noopener">
+        Start a conversation on Instagram
       </a>
     </div>
   </div>
@@ -1220,7 +1246,7 @@ body.en em.ja-only { display: none; }
         <span class="en-only">The language didn't come.</span>
       </div>
       <div class="s09-ep-line">
-        <span class="s09-ep-en">15 years</span>
+        <span class="s09-ep-en">13 years</span>
         <span class="ja-only">技術と自信は、あった。</span>
         <span class="en-only">The skill was there. The confidence too.</span>
       </div>
@@ -1237,13 +1263,13 @@ body.en em.ja-only { display: none; }
     </div>
     <p class="s09-note zen fu d3 ja-only">
       <span class="line">果敢に来い——そういう意味だと思った。</span>
-      <span class="line">プロとして15年以上の実績があったのに、</span>
+      <span class="line">プロとして13年の実績があったのに、</span>
       <span class="line"><strong>怖さが、身体に出ていた。</strong></span>
       <span class="line">その一言が、ずっと記憶に残っている。</span>
     </p>
     <p class="s09-note fu d3 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
       <span class="line">I thought it meant: be bold. Come forward.</span>
-      <span class="line">Fifteen years as a professional —</span>
+      <span class="line">Thirteen years as a professional —</span>
       <span class="line"><strong style="font-weight:400;">and still, the fear was showing in my body.</strong></span>
       <span class="line">That single word never left me.</span>
     </p>
@@ -1349,7 +1375,7 @@ body.en em.ja-only { display: none; }
       <span class="line">where something clicks.</span>
     </p>
     <p class="s11-line fu d2 ja-only">気になったことがあれば、そのままLINEで話しかけてみてください。</p>
-    <p class="s11-line fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">If something resonates, feel free to reach out on LINE.</p>
+    <p class="s11-line fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">If something resonates, feel free to send us a DM on Instagram.</p>
     <div class="s11-cards">
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="s11-cd fu d1" target="_blank">
         <p class="s11-cd-n en">01</p>
@@ -1429,9 +1455,11 @@ body.en em.ja-only { display: none; }
         <span class="line">At your pace. In your words.</span>
       </p>
     </div>
-    <a href="https://lin.ee/KR1qGTc" class="btn-line fu d3" target="_blank">
-      <span class="ja-only">まずLINEでご相談ください</span>
-      <span class="en-only">Say hello on LINE</span>
+    <a href="https://lin.ee/KR1qGTc" class="btn-line fu d3 ja-only" target="_blank">
+      まずLINEでご相談ください
+    </a>
+    <a href="https://www.instagram.com/takahair_bridge/" class="btn-line btn-line-ig fu d3 en-only" target="_blank" rel="noopener">
+      Say hello on Instagram
     </a>
     <div class="s13-how fu d4">
       <p class="s13-how-p zen ja-only">
@@ -1440,7 +1468,7 @@ body.en em.ja-only { display: none; }
         <span class="line">通常24時間以内にお返事します。</span>
       </p>
       <p class="s13-how-p en-only" style="font-family:'Cormorant Garamond',serif;">
-        <span class="line">Just open LINE and send "Hello." That's enough.</span>
+        <span class="line">Just send us a DM on Instagram and say "Hello." That's enough.</span>
         <span class="line">Not sure what to write? That's fine too.</span>
         <span class="line">I typically reply within 24 hours.</span>
       </p>
@@ -1453,7 +1481,7 @@ body.en em.ja-only { display: none; }
 
 <div class="ft-diagnosis">
   <p class="ft-diagnosis-p zen ja-only">今すぐLINEが難しい方は、<a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">診断だけでも試してみてください</a>。</p>
-  <p class="ft-diagnosis-p en-only" style="font-family:'Cormorant Garamond',serif;">Not ready for LINE yet? <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">Try the diagnosis first →</a></p>
+  <p class="ft-diagnosis-p en-only" style="font-family:'Cormorant Garamond',serif;">Not ready to message yet? <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">Try the diagnosis first →</a></p>
 </div>
 
 <footer>
