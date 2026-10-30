@@ -770,10 +770,12 @@ footer { background:var(--ink); padding:3.5rem 2rem; text-align:center; }
 .en-only { display: none; }
 body.en .en-only { display: block; }
 body.en .ja-only { display: none; }
-span.en-only { display: inline; }
+span.en-only { display: none; } /* v2.10：日本語表示で英語の span が出ていたのを止める */
 span.ja-only { display: inline; }
 body.en span.en-only { display: inline; }
 body.en span.ja-only { display: none; }
+span.s09-cta-lead.ja-only { display: block; }
+body.en span.s09-cta-lead.en-only { display: block; }
 /* inline block variants */
 p.en-only { display: none; }
 body.en p.en-only { display: block; }
