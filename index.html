@@ -806,6 +806,10 @@ body.en a.btn-line.ja-only{ display:none; }
 body.en a.btn-line.en-only{ display:inline-block; }
 .btn-line-ig{ background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF) !important;
   border-color:transparent !important; }
+
+/* 改行の整え（BudouXで文節の区切りに<wbr>を入れ、その位置でだけ折り返す・v2.9） */
+body{word-break:keep-all;overflow-wrap:anywhere;line-break:strict;}
+p,h1,h2,h3,li,blockquote{text-wrap:pretty;}
 </style>
 </head>
 <body>
@@ -819,7 +823,7 @@ body.en a.btn-line.en-only{ display:inline-block; }
 <div class="mob-line-bar" id="mobLineBar">
   <a href="https://lin.ee/KR1qGTc" target="_blank" class="ja-only">
     <div class="mob-line-dot"></div>
-    <span class="mob-line-text">LINEでご相談ください</span>
+    <span class="mob-line-text">LINEで<wbr>ご相談ください</span>
     <span class="mob-line-arrow">→</span>
   </a>
   <a href="https://www.instagram.com/takahair_bridge/" target="_blank" rel="noopener" class="en-only">
@@ -865,14 +869,14 @@ body.en a.btn-line.en-only{ display:inline-block; }
     <span>Beauty that</span>
     <span><em>compounds.</em></span>
   </h1>
-  <p class="s01-jp fu-fade d1 zen ja-only">髪と私の、秘密の時間。</p>
+  <p class="s01-jp fu-fade d1 zen ja-only">髪と<wbr>私の、<wbr>秘密の<wbr>時間。</p>
   <p class="s01-jp fu-fade d1 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">The quiet hour that belongs to you alone.</p>
-  <p class="s01-empathy fu-fade d2 zen ja-only">「なんか違う」が、続いている方へ。</p>
+  <p class="s01-empathy fu-fade d2 zen ja-only">「なんか<wbr>違う」が、<wbr>続いている<wbr>方へ。</p>
   <p class="s01-empathy fu-fade d2 en-only" style="font-family:'Cormorant Garamond',serif;">For those who've always felt something was missing.</p>
-  <p class="s01-mirror fu-fade d3 zen ja-only">鏡の中の自分が、自然と笑顔になる日常へ。</p>
+  <p class="s01-mirror fu-fade d3 zen ja-only">鏡の<wbr>中の<wbr>自分が、<wbr>自然と笑<wbr>顔に<wbr>なる<wbr>日常へ。</p>
   <div class="s01-voice fu-fade d3 ja-only">
-    <p class="s01-voice-t zen">「いつも美容室を変えていた中<br>やっと落ち着いて綺麗なロングヘアを楽しませていただいてます。」</p>
-    <p class="s01-voice-s">— Googleのクチコミより</p>
+    <p class="s01-voice-t zen">「いつも<wbr>美容室を<wbr>変えていた<wbr>中<br>やっと<wbr>落ち着いて<wbr>綺麗な<wbr>ロングヘアを<wbr>楽しませていただいてます。」</p>
+    <p class="s01-voice-s">— Googleの<wbr>クチコミより</p>
   </div>
   <div class="s01-scroll fu-fade d3">
     <span>Scroll</span>
@@ -887,17 +891,17 @@ body.en a.btn-line.en-only{ display:inline-block; }
     <span class="mq-i">Tokyo → New York → Osaka</span><span class="mq-d">✦</span>
     <span class="mq-i">Since 2002</span><span class="mq-d">✦</span>
     <span class="mq-i">One-to-One</span><span class="mq-d">✦</span>
-    <span class="mq-i">Google ★ 5.0（53件）</span><span class="mq-d">✦</span>
-    <span class="mq-i">一日5名限定</span><span class="mq-d">✦</span>
-    <span class="mq-i">施術後1週間保証</span><span class="mq-d">✦</span>
+    <span class="mq-i">Google ★<wbr> 5.0<wbr>（53件）</span><span class="mq-d">✦</span>
+    <span class="mq-i">一日<wbr>5名限定</span><span class="mq-d">✦</span>
+    <span class="mq-i">施術後<wbr>1週間保証</span><span class="mq-d">✦</span>
     <span class="mq-i">English OK</span><span class="mq-d">✦</span>
     <span class="mq-i">Osaka · Kitahama</span><span class="mq-d">✦</span>
     <span class="mq-i">Tokyo → New York → Osaka</span><span class="mq-d">✦</span>
     <span class="mq-i">Since 2002</span><span class="mq-d">✦</span>
     <span class="mq-i">One-to-One</span><span class="mq-d">✦</span>
-    <span class="mq-i">Google ★ 5.0（53件）</span><span class="mq-d">✦</span>
-    <span class="mq-i">一日5名限定</span><span class="mq-d">✦</span>
-    <span class="mq-i">施術後1週間保証</span><span class="mq-d">✦</span>
+    <span class="mq-i">Google ★<wbr> 5.0<wbr>（53件）</span><span class="mq-d">✦</span>
+    <span class="mq-i">一日<wbr>5名限定</span><span class="mq-d">✦</span>
+    <span class="mq-i">施術後<wbr>1週間保証</span><span class="mq-d">✦</span>
     <span class="mq-i">English OK</span><span class="mq-d">✦</span>
     <span class="mq-i">Osaka · Kitahama</span><span class="mq-d">✦</span>
   </div>
@@ -907,8 +911,8 @@ body.en a.btn-line.en-only{ display:inline-block; }
 <section class="itl">
   <p class="itl-sub fu-fade en">A question for you</p>
   <h2 class="itl-q zen fu-fade d1 ja-only">
-    <span>あなたはまだ、</span>
-    <span>自分の本当の美しさに、</span>
+    <span>あなたは<wbr>まだ、</span>
+    <span>自分の<wbr>本当の<wbr>美しさに、</span>
     <span>出会っていないかもしれない。</span>
   </h2>
   <h2 class="itl-q fu-fade d1 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;">
@@ -925,14 +929,14 @@ body.en a.btn-line.en-only{ display:inline-block; }
   <div class="s02-in">
     <span class="lbl fu">The Wound</span>
 
-    <h2 class="s02-h zen fu d1 ja-only">毎回のちょっとした違和感…。</h2>
+    <h2 class="s02-h zen fu d1 ja-only">毎回の<wbr>ちょっとした<wbr>違和感…。</h2>
     <h2 class="s02-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">That quiet feeling something isn't quite right.</h2>
 
     <p class="s02-p fu d2 ja-only">
-      <span class="line">同じ説明をしているはずなのに、毎回仕上がりが違う。</span>
-      <span class="line">「似合いますよ」と言われると、なぜか断れない。</span>
-      <span class="line">サロンでは綺麗なのに、家で再現できない。</span>
-      <span class="line">次の来店までの間、鏡を見るたびに小さくため息をつく。</span>
+      <span class="line">同じ<wbr>説明を<wbr>しているはずなのに、<wbr>毎回仕上がりが<wbr>違う。</span>
+      <span class="line">「似合いますよ」と<wbr>言われると、<wbr>なぜか<wbr>断れない。</span>
+      <span class="line">サロンでは<wbr>綺麗なのに、<wbr>家で<wbr>再現できない。</span>
+      <span class="line">次の<wbr>来店までの<wbr>間、<wbr>鏡を<wbr>見る<wbr>たびに<wbr>小さく<wbr>ため息を<wbr>つく。</span>
     </p>
     <p class="s02-p fu d2 en-only">
       <span class="line">You explain it the same way every time — yet the result keeps changing.</span>
@@ -942,22 +946,22 @@ body.en a.btn-line.en-only{ display:inline-block; }
     </p>
 
     <p class="s02-p fu d3 ja-only">
-      <span class="line">これは、あなたの伝え方の問題ではありません。</span>
-      <span class="line">「ちゃんと聞いてもらえる構造」が、なかっただけです。</span>
+      <span class="line">これは、<wbr>あなたの<wbr>伝え方の<wbr>問題ではありません。</span>
+      <span class="line">「ちゃんと<wbr>聞いて<wbr>もらえる<wbr>構造」が、<wbr>なかっただけです。</span>
     </p>
     <p class="s02-p fu d3 en-only">
       <span class="line">This is not a you problem.</span>
       <span class="line">You simply haven't found a place that was built to truly listen.</span>
     </p>
 
-    <div class="s02-q zen fu d4 ja-only">「言えていないことを、言える場所がある。」</div>
+    <div class="s02-q zen fu d4 ja-only">「言えていない<wbr>ことを、<wbr>言える<wbr>場所が<wbr>ある。」</div>
     <div class="s02-q fu d4 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">"There is a place where the things you couldn't say — can finally be said."</div>
 
     <p class="s02-p fu d5 ja-only">
-      <span class="line">髪がきまると、朝の支度が変わる。</span>
-      <span class="line">出かけることが楽しくなる。</span>
-      <span class="line">会いたい人に、会いに行ける。</span>
-      <span class="line">新しいことに、踏み出せる気がする。</span>
+      <span class="line">髪が<wbr>きまると、<wbr>朝の<wbr>支度が<wbr>変わる。</span>
+      <span class="line">出かけることが<wbr>楽しくなる。</span>
+      <span class="line">会いたい<wbr>人に、<wbr>会いに<wbr>行ける。</span>
+      <span class="line">新しい<wbr>ことに、<wbr>踏み出せる<wbr>気が<wbr>する。</span>
     </p>
     <p class="s02-p fu d5 en-only">
       <span class="line">When your hair feels right, mornings feel different.</span>
@@ -966,11 +970,11 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <span class="line">Something new feels possible.</span>
     </p>
 
-    <p class="s02-p-em zen fu d6 ja-only">── そして最近、笑顔がふえた気がする。</p>
+    <p class="s02-p-em zen fu d6 ja-only">── <wbr>そして<wbr>最近、笑<wbr>顔が<wbr>ふえた<wbr>気が<wbr>する。</p>
     <p class="s02-p-em fu d6 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">── And somewhere along the way, you start to smile more.</p>
 
     <p class="s02-p-em zen fu d6 ja-only" style="margin-top:1.5rem;">
-      bridgeが届けたいのは、その<em>トキ</em>です。
+      bridgeが<wbr>届けたいのは、<wbr>その<em>トキ</em>です。
     </p>
     <p class="s02-p-em fu d6 en-only" style="margin-top:1.5rem;font-family:'Cormorant Garamond',serif;">
       That feeling — of finally clicking into yourself — is what bridge is here for.
@@ -986,8 +990,8 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          <span class="ja-only">「次回もぜひ」と言われると、来なければいけない気がしてしまう。
-          <span class="s03-q-sub">bridgeは、あなたのペースで来てください。急かしません。</span></span>
+          <span class="ja-only">「次回も<wbr>ぜひ」と<wbr>言われると、<wbr>来なければいけない<wbr>気が<wbr>してしまう。
+          <span class="s03-q-sub">bridgeは、<wbr>あなたの<wbr>ペースで<wbr>来てください。<wbr>急かしません。</span></span>
           <span class="en-only">"See you next time" — and suddenly you feel obligated.
           <span class="s03-q-sub">At bridge, you come when you're ready. We never push.</span></span>
         </div>
@@ -995,8 +999,8 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          <span class="ja-only">追加メニューを勧められるたびに、断る言葉を探してしまう。
-          <span class="s03-q-sub">bridgeは、必要のないものを勧めません。</span></span>
+          <span class="ja-only">追加メニューを<wbr>勧められる<wbr>たびに、<wbr>断る<wbr>言葉を<wbr>探してしまう。
+          <span class="s03-q-sub">bridgeは、<wbr>必要の<wbr>ない<wbr>ものを<wbr>勧めません。</span></span>
           <span class="en-only">Every visit, you brace yourself for the upsell.
           <span class="s03-q-sub">At bridge, we only suggest what we genuinely believe you need.</span></span>
         </div>
@@ -1004,8 +1008,8 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          <span class="ja-only">いつも同じような提案で、「本当に私を見てくれている？」と感じた。
-          <span class="s03-q-sub">bridgeは、毎回、同じようで同じでない施術をしています。</span></span>
+          <span class="ja-only">いつも<wbr>同じような<wbr>提案で、<wbr>「本当に<wbr>私を<wbr>見てくれている？」と<wbr>感じた。
+          <span class="s03-q-sub">bridgeは、<wbr>毎回、<wbr>同じようで<wbr>同じでない<wbr>施術を<wbr>しています。</span></span>
           <span class="en-only">The same suggestions every time — and you wonder if they ever really see you.
           <span class="s03-q-sub">At bridge, every appointment is shaped around who you are right now.</span></span>
         </div>
@@ -1013,16 +1017,16 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s03-q">
         <span class="s03-q-mark">？</span>
         <div class="s03-q-txt">
-          <span class="ja-only">「なんか違う」と思いながら、何も言えずに帰ってきた。
-          <span class="s03-q-sub">bridgeは、あなたの「違う」を最後まで受け取ります。</span></span>
+          <span class="ja-only">「なんか<wbr>違う」と<wbr>思いながら、<wbr>何も<wbr>言えずに<wbr>帰ってきた。
+          <span class="s03-q-sub">bridgeは、<wbr>あなたの<wbr>「違う」を<wbr>最後まで<wbr>受け取ります。</span></span>
           <span class="en-only">You left with that feeling — something was off — and said nothing.
           <span class="s03-q-sub">At bridge, your "something's not right" is always welcome.</span></span>
         </div>
       </div>
     </div>
     <p class="s03-end zen fu-still d2 ja-only">
-      しないことを選ぶのは、
-      <strong>あなたの時間を、守るためです。</strong>
+      しない<wbr>ことを<wbr>選ぶのは、
+      <strong>あなたの<wbr>時間を、<wbr>守る<wbr>ためです。</strong>
     </p>
     <p class="s03-end fu-still d2 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
       Everything we choose not to do<br>
@@ -1030,7 +1034,7 @@ body.en a.btn-line.en-only{ display:inline-block; }
     </p>
     <div class="sub-cta fu d3">
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="sub-cta-link" target="_blank">
-        <span class="ja-only">まず、30秒の診断をしてみる →</span>
+        <span class="ja-only">まず、<wbr>30秒の<wbr>診断を<wbr>してみる<wbr> →</span>
         <span class="en-only">Take the 30-second diagnosis →</span>
       </a>
     </div>
@@ -1045,10 +1049,10 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <h2 class="s04-name zen fu d1">TAKA</h2>
       <div class="s04-role en fu d2"></div>
       <p class="s04-p fu d3 ja-only">
-        <span class="line">東京・ニューヨーク・大阪での20年以上のキャリア。</span>
-        <span class="line">著名人の施術、異文化の髪質との対話、</span>
-        <span class="line">「他店で失敗した」お客様の信頼回復を、</span>
-        <span class="line">数えきれないほど経験してきました。</span>
+        <span class="line">東京・ニューヨーク・大阪での<wbr>20年以上の<wbr>キャリア。</span>
+        <span class="line">著名人の<wbr>施術、<wbr>異文化の<wbr>髪質との<wbr>対話、</span>
+        <span class="line">「他店で<wbr>失敗した」<wbr>お客様の<wbr>信頼回復を、</span>
+        <span class="line">数えきれない<wbr>ほど<wbr>経験してきました。</span>
       </p>
       <p class="s04-p fu d3 en-only">
         <span class="line">Twenty years across Tokyo, New York, and Osaka.</span>
@@ -1057,10 +1061,10 @@ body.en a.btn-line.en-only{ display:inline-block; }
         <span class="line">Each one left differently.</span>
       </p>
       <p class="s04-p fu d4 ja-only">
-        <span class="line">私が届けたいのは、技術ではありません。</span>
-        <span class="line">あなたの人生が、少し軽くなった。</span>
-        <span class="line">そう思ってもらえる、そのトキ。</span>
-        <span class="line">それがbridgeの、本当の仕事です。</span>
+        <span class="line">私が<wbr>届けたいのは、<wbr>技術ではありません。</span>
+        <span class="line">あなたの<wbr>人生が、<wbr>少し<wbr>軽くなった。</span>
+        <span class="line">そう<wbr>思って<wbr>もらえる、<wbr>その<wbr>トキ。</span>
+        <span class="line">それが<wbr>bridgeの、<wbr>本当の<wbr>仕事です。</span>
       </p>
       <p class="s04-p fu d4 en-only">
         <span class="line">What I want to give you isn't technique.</span>
@@ -1081,7 +1085,7 @@ body.en a.btn-line.en-only{ display:inline-block; }
           <span class="s04-credit-lbl en">Seminar</span>
           <span class="s04-credit-val-wrap">
             <span class="s04-credit-val en">MILBON · HOYU · TAKARA Belmont · Suncall · Moroccan Oil</span>
-            <span class="s04-credit-val-sub en">（NY · LA · 東京 · 大阪 · 名古屋 他）</span>
+            <span class="s04-credit-val-sub en">（NY · LA · <wbr>東京 · 大阪 · 名古屋 他）</span>
           </span>
         </div>
         <div class="s04-credit-row">
@@ -1102,19 +1106,19 @@ body.en a.btn-line.en-only{ display:inline-block; }
   <div class="s05-in">
     <div class="s05-hd">
       <span class="lbl fu">Philosophy</span>
-      <h2 class="s05-h zen fu d1 ja-only">bridgeに来ると、何かが変わる。</h2>
+      <h2 class="s05-h zen fu d1 ja-only">bridgeに<wbr>来ると、<wbr>何かが<wbr>変わる。</h2>
       <h2 class="s05-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">Something shifts when you come to bridge.</h2>
       <div class="div-c fu d2"></div>
     </div>
     <div class="s05-grid">
       <div class="s05-c fu d1">
         <p class="s05-cn en">01</p>
-        <h3 class="s05-ct zen ja-only">あなたの「らしさ」が、続く</h3>
+        <h3 class="s05-ct zen ja-only">あなたの<wbr>「らしさ」が、<wbr>続く</h3>
         <h3 class="s05-ct en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">A style that stays true to you</h3>
         <p class="s05-cb ja-only">
-          <span class="line">確かな技術と知識で、本質を極めたサービスを届けます。</span>
-          <span class="line">髪に負担をかけず、あなたらしい美しさを持続させる。</span>
-          <span class="line">「今日だけ」ではなく、ずっと続くスタイルを一緒に設計します。</span>
+          <span class="line">確かな<wbr>技術と<wbr>知識で、<wbr>本質を<wbr>極めた<wbr>サービスを<wbr>届けます。</span>
+          <span class="line">髪に<wbr>負担を<wbr>かけず、<wbr>あなたらしい<wbr>美しさを<wbr>持続させる。</span>
+          <span class="line">「今日だけ」ではなく、<wbr>ずっと<wbr>続く<wbr>スタイルを<wbr>一緒に<wbr>設計します。</span>
         </p>
         <p class="s05-cb en-only">
           <span class="line">Not a style for today — a style designed to last.</span>
@@ -1124,12 +1128,12 @@ body.en a.btn-line.en-only{ display:inline-block; }
       </div>
       <div class="s05-c fu d2">
         <p class="s05-cn en">02</p>
-        <h3 class="s05-ct zen ja-only">あなたの声が、届く</h3>
+        <h3 class="s05-ct zen ja-only">あなたの<wbr>声が、<wbr>届く</h3>
         <h3 class="s05-ct en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Your voice is heard</h3>
         <p class="s05-cb ja-only">
-          <span class="line">日常に寄り添いながら、時には新しい自分への提案も。</span>
-          <span class="line">「似合いますよ」ではなく、「あなたはどうしたいですか」から始める。</span>
-          <span class="line">それが、bridgeが考える誠実さです。</span>
+          <span class="line">日常に<wbr>寄り添いながら、<wbr>時には<wbr>新しい<wbr>自分への<wbr>提案も。</span>
+          <span class="line">「似合いますよ」ではなく、<wbr>「あなたは<wbr>どうしたいですか」から<wbr>始める。</span>
+          <span class="line">それが、<wbr>bridgeが<wbr>考える<wbr>誠実さです。</span>
         </p>
         <p class="s05-cb en-only">
           <span class="line">We don't start with "this suits you."</span>
@@ -1139,12 +1143,12 @@ body.en a.btn-line.en-only{ display:inline-block; }
       </div>
       <div class="s05-c fu d3">
         <p class="s05-cn en">03</p>
-        <h3 class="s05-ct zen ja-only">あなたの時間が、戻ってくる</h3>
+        <h3 class="s05-ct zen ja-only">あなたの<wbr>時間が、<wbr>戻ってくる</h3>
         <h3 class="s05-ct en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Your mornings become your own again</h3>
         <p class="s05-cb ja-only">
-          <span class="line">毎朝のスタイリングが、少し楽になる。</span>
-          <span class="line">その分だけ、自分のための時間が生まれる。</span>
-          <span class="line">bridgeが届けたいのは、その積み重なっていくトキです。</span>
+          <span class="line">毎朝の<wbr>スタイリングが、<wbr>少し<wbr>楽に<wbr>なる。</span>
+          <span class="line">その<wbr>分だけ、<wbr>自分の<wbr>ための<wbr>時間が<wbr>生まれる。</span>
+          <span class="line">bridgeが<wbr>届けたいのは、<wbr>その<wbr>積み重なっていく<wbr>トキです。</span>
         </p>
         <p class="s05-cb en-only">
           <span class="line">When your hair takes less effort each morning,</span>
@@ -1160,30 +1164,30 @@ body.en a.btn-line.en-only{ display:inline-block; }
 <section class="s06">
   <div class="s06-in">
     <span class="lbl fu">The Method</span>
-    <h2 class="s06-main zen fu d1 ja-only">はじめに、聞かせてください。</h2>
+    <h2 class="s06-main zen fu d1 ja-only">はじめに、<wbr>聞かせてください。</h2>
     <h2 class="s06-main fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">First, tell me everything.</h2>
-    <p class="s06-sub zen fu d2 ja-only">施術は、その後から始まります。</p>
+    <p class="s06-sub zen fu d2 ja-only">施術は、<wbr>その後から<wbr>始まります。</p>
     <p class="s06-sub fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">The scissors come after.</p>
     <div class="s06-body fu d3">
       <p class="s06-body-p ja-only">
-        <span class="line">最初にすることは、ハサミを持つことではありません。</span>
-        <span class="line">あなたが今日ここに来た理由を、聞かせてもらうことです。</span>
+        <span class="line">最初に<wbr>する<wbr>ことは、<wbr>ハサミを<wbr>持つ<wbr>ことではありません。</span>
+        <span class="line">あなたが<wbr>今日ここに<wbr>来た<wbr>理由を、<wbr>聞かせて<wbr>もらう<wbr>ことです。</span>
       </p>
       <p class="s06-body-p en-only">
         <span class="line">The first thing I do isn't pick up a pair of scissors.</span>
         <span class="line">It's ask why you're here today.</span>
       </p>
       <ul class="s06-qs fu d4">
-        <li class="s06-q-item ja-only">どんな朝を過ごしているか。</li>
+        <li class="s06-q-item ja-only">どんな<wbr>朝を<wbr>過ごしているか。</li>
         <li class="s06-q-item en-only">What does your morning look like?</li>
-        <li class="s06-q-item ja-only">大切にしている自分らしさは何か。</li>
+        <li class="s06-q-item ja-only">大切に<wbr>している<wbr>自分らしさは<wbr>何か。</li>
         <li class="s06-q-item en-only">What part of yourself do you most want to hold onto?</li>
-        <li class="s06-q-item ja-only">変えてみたいと思っていること、変えたくないこと。</li>
+        <li class="s06-q-item ja-only">変えてみたいと<wbr>思っている<wbr>こと、<wbr>変えたくない<wbr>こと。</li>
         <li class="s06-q-item en-only">What would you love to change — and what would you never want to lose?</li>
       </ul>
       <p class="s06-body-p fu d5 ja-only">
-        <span class="line">言葉にならなくても大丈夫です。</span>
-        <span class="line">それを一緒に見つけることが、bridgeの最初の仕事です。</span>
+        <span class="line">言葉に<wbr>ならなくても<wbr>大丈夫です。</span>
+        <span class="line">それを<wbr>一緒に<wbr>見つける<wbr>ことが、<wbr>bridgeの<wbr>最初の<wbr>仕事です。</span>
       </p>
       <p class="s06-body-p fu d5 en-only">
         <span class="line">You don't need the right words.</span>
@@ -1200,8 +1204,8 @@ body.en a.btn-line.en-only{ display:inline-block; }
   <div class="s07-in fu-still">
     <span class="lbl lbl-l fu-still" style="text-transform:none;letter-spacing:.2em;">Your Sanctuary</span>
     <h2 class="s07-copy zen fu-still d1 ja-only">
-      <span class="line">何も持ち込まなくていい。</span>
-      <span class="line">ここでは、あなたのままでいい。</span>
+      <span class="line">何も<wbr>持ち込まなくて<wbr>いい。</span>
+      <span class="line">ここでは、<wbr>あなたのままで<wbr>いい。</span>
     </h2>
     <h2 class="s07-copy fu-still d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
       <span class="line">Leave everything at the door.</span>
@@ -1218,19 +1222,19 @@ body.en a.btn-line.en-only{ display:inline-block; }
     <div class="s08-nums fu d1">
       <div class="s08-num">
         <p class="s08-n en">20+</p>
-        <p class="s08-nl zen ja-only">ひとりの美容師として積み上げてきた年月</p>
+        <p class="s08-nl zen ja-only">ひとりの<wbr>美容師と<wbr>して<wbr>積み上げてきた<wbr>年月</p>
         <p class="s08-nl en-only" style="font-family:'Cormorant Garamond',serif;">Years as a solo stylist, undivided</p>
       </div>
       <div class="s08-num">
         <p class="s08-n en">5</p>
-        <p class="s08-nl zen ja-only">一日に向き合う、最大の人数</p>
+        <p class="s08-nl zen ja-only">一日に<wbr>向き合う、<wbr>最大の<wbr>人数</p>
         <p class="s08-nl en-only" style="font-family:'Cormorant Garamond',serif;">Guests per day — maximum, always</p>
       </div>
       <div class="s08-num">
         <p class="s08-n en">5.0</p>
-        <p class="s08-nl zen ja-only">Googleで頂いている、すべての評価</p>
+        <p class="s08-nl zen ja-only">Googleで<wbr>頂いている、<wbr>すべての<wbr>評価</p>
         <p class="s08-nl en-only" style="font-family:'Cormorant Garamond',serif;">Google rating — every single review</p>
-        <p class="s08-nl zen" style="font-size:.78rem;color:var(--gold);letter-spacing:.08em;margin-top:.3rem;">（53件・2026年現在）</p>
+        <p class="s08-nl zen" style="font-size:.78rem;color:var(--gold);letter-spacing:.08em;margin-top:.3rem;">（53件・202<wbr>6年現在）</p>
       </div>
     </div>
     <div class="div-c fu d2"></div>
@@ -1238,9 +1242,9 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s08-r">
         <p class="s08-r-st">★★★★★</p>
         <p class="s08-r-p ja-only">
-          <span class="line">初めて伺いましたがとても心地よく過ごせました。</span>
-          <span class="line">日頃のヘアアレンジのアドバイスなども下さり、とても親切でした。</span>
-          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">施術後、朝のスタイリングが格段に楽になりました。</strong></span>
+          <span class="line">初めて<wbr>伺いましたが<wbr>とても<wbr>心地よく<wbr>過ごせました。</span>
+          <span class="line">日頃の<wbr>ヘアアレンジの<wbr>アドバイスなども<wbr>下さり、<wbr>とても<wbr>親切でした。</span>
+          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">施術後、<wbr>朝の<wbr>スタイリングが<wbr>格段に<wbr>楽に<wbr>なりました。</strong></span>
         </p>
         <p class="s08-r-p en-only">
           <span class="line">My first visit — and I felt completely at ease.</span>
@@ -1252,9 +1256,9 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s08-r">
         <p class="s08-r-st">★★★★★</p>
         <p class="s08-r-p ja-only">
-          <span class="line">NYに住み始めて以来、TAKAさんにずっとお世話になってます。</span>
-          <span class="line">毎回丁寧に親切に楽しく、私のわがままや要望を聞いて下さってます。</span>
-          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">他のサロンでは諦めていたことが、ここでは叶いました。</strong></span>
+          <span class="line">NYに<wbr>住み始めて<wbr>以来、<wbr>TAKAさんに<wbr>ずっと<wbr>お世話に<wbr>なってます。</span>
+          <span class="line">毎回<wbr>丁寧に<wbr>親切に<wbr>楽しく、<wbr>私の<wbr>わが<wbr>ままや<wbr>要望を<wbr>聞いて<wbr>下さってます。</span>
+          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">他の<wbr>サロンでは<wbr>諦めていた<wbr>ことが、<wbr>ここでは<wbr>叶いました。</strong></span>
         </p>
         <p class="s08-r-p en-only">
           <span class="line">I've trusted TAKA with my hair since my New York days.</span>
@@ -1266,9 +1270,9 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <div class="s08-r">
         <p class="s08-r-st">★★★★★</p>
         <p class="s08-r-p ja-only">
-          <span class="line">こんな髪型がしたい、こうなりたい、という気持ちを汲んでくださり素敵な髪型にしていただきました。</span>
-          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">前髪がセットしやすくなり、職場で「髪変えた？」と言われるようになりました。</strong></span>
-          <span class="line">技術が高くお人柄も素敵な方なので、私もまたお願いしたいです。</span>
+          <span class="line">こんな<wbr>髪型が<wbr>したい、<wbr>こうなりたい、と<wbr>いう<wbr>気持ちを<wbr>汲んでくださり<wbr>素敵な<wbr>髪型に<wbr>していただきました。</span>
+          <span class="line"><strong style="color:var(--dbrown);font-weight:400;">前髪が<wbr>セットしやすくなり、<wbr>職場で<wbr>「髪<wbr>変えた？」と<wbr>言われるようになりました。</strong></span>
+          <span class="line">技術が<wbr>高く<wbr>お人柄も<wbr>素敵な<wbr>方なので、<wbr>私もまた<wbr>お願いしたいです。</span>
         </p>
         <p class="s08-r-p en-only">
           <span class="line">He understood exactly what I was hoping for — even the parts I couldn't quite put into words.</span>
@@ -1280,7 +1284,7 @@ body.en a.btn-line.en-only{ display:inline-block; }
     </div>
     <div class="sub-cta sub-cta-dark fu d4">
       <a href="https://lin.ee/KR1qGTc" class="sub-cta-link sub-cta-link-dark ja-only" target="_blank">
-        LINEで相談してみる
+        LINEで<wbr>相談してみる
       </a>
       <a href="https://www.instagram.com/takahair_bridge/" class="sub-cta-link sub-cta-link-dark en-only" target="_blank" rel="noopener">
         Start a conversation on Instagram
@@ -1296,30 +1300,30 @@ body.en a.btn-line.en-only{ display:inline-block; }
     <div class="s09-ep fu d1">
       <div class="s09-ep-line">
         <span class="s09-ep-en">New York</span>
-        <span class="ja-only">言葉が通じなかった。</span>
+        <span class="ja-only">言葉が<wbr>通じなかった。</span>
         <span class="en-only">The language didn't come.</span>
       </div>
       <div class="s09-ep-line">
         <span class="s09-ep-en">13 years</span>
-        <span class="ja-only">技術と自信は、あった。</span>
+        <span class="ja-only">技術と<wbr>自信は、<wbr>あった。</span>
         <span class="en-only">The skill was there. The confidence too.</span>
       </div>
       <div class="s09-ep-line">
         <span class="s09-ep-en">And yet</span>
-        <span class="ja-only">知らないうちに、小さくなっていた。</span>
+        <span class="ja-only">知らない<wbr>うちに、<wbr>小さくなっていた。</span>
         <span class="en-only">Somehow, I had made myself smaller.</span>
       </div>
     </div>
     <div class="s09-brave-box fu-brave d-brave">
-      <p class="s09-brave-pre zen ja-only">あるお客様が、一言だけ言った。</p>
+      <p class="s09-brave-pre zen ja-only">ある<wbr>お客様が、<wbr>一言だけ<wbr>言った。</p>
       <p class="s09-brave-pre en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:rgba(253,250,247,.5);">A client said just one word to me.</p>
       <em class="s09-brave-word en">Brave.</em>
     </div>
     <p class="s09-note zen fu d3 ja-only">
-      <span class="line">果敢に来い——そういう意味だと思った。</span>
-      <span class="line">プロとして13年の実績があったのに、</span>
-      <span class="line"><strong>怖さが、身体に出ていた。</strong></span>
-      <span class="line">その一言が、ずっと記憶に残っている。</span>
+      <span class="line">果敢に<wbr>来い<wbr>——そういう<wbr>意味だと<wbr>思った。</span>
+      <span class="line">プロと<wbr>して<wbr>13年の<wbr>実績が<wbr>あったのに、</span>
+      <span class="line"><strong>怖さが、<wbr>身体に<wbr>出ていた。</strong></span>
+      <span class="line">その<wbr>一言が、<wbr>ずっと<wbr>記憶に<wbr>残っている。</span>
     </p>
     <p class="s09-note fu d3 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
       <span class="line">I thought it meant: be bold. Come forward.</span>
@@ -1328,27 +1332,27 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <span class="line">That single word never left me.</span>
     </p>
     <div class="s09-shift fu d4">
-      <p class="s09-shift-line ja-only">言葉は通じなくていい。</p>
+      <p class="s09-shift-line ja-only">言葉は<wbr>通じなくて<wbr>いい。</p>
       <p class="s09-shift-line en-only" style="font-family:'Cormorant Garamond',serif;">Words weren't the point.</p>
-      <p class="s09-shift-line ja-only">手で、技術で、聞く姿勢で届ける。</p>
+      <p class="s09-shift-line ja-only">手で、<wbr>技術で、<wbr>聞く<wbr>姿勢で<wbr>届ける。</p>
       <p class="s09-shift-line en-only" style="font-family:'Cormorant Garamond',serif;">Hands, craft, and the posture of listening — that's how you reach someone.</p>
-      <p class="s09-shift-line ja-only">目の前の一人に、100%を注ぎ込む。</p>
+      <p class="s09-shift-line ja-only">目の前の<wbr>一人に、<wbr>100%を<wbr>注ぎ込む。</p>
       <p class="s09-shift-line en-only" style="font-family:'Cormorant Garamond',serif;">One person in front of me. Everything I have.</p>
     </div>
-    <p class="s09-result zen fu d5 ja-only">数ヶ月後、予約が1ヶ月先まで埋まっていた。</p>
+    <p class="s09-result zen fu d5 ja-only">数ヶ月後、<wbr>予約が<wbr>1ヶ月先まで<wbr>埋まっていた。</p>
     <p class="s09-result fu d5 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">A few months later, I was booked a month out.</p>
     <div class="s09-decl fu-still d6">
       <p class="s09-decl-q zen ja-only">
-        <span class="line">あのお客様が私に言ってくれたように、</span>
-        <span class="line">私も今、あなたに言いたい。</span>
+        <span class="line">あの<wbr>お客様が<wbr>私に<wbr>言ってくれたように、</span>
+        <span class="line">私も<wbr>今、<wbr>あなたに<wbr>言いたい。</span>
       </p>
       <p class="s09-decl-q en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
         <span class="line">What that client gave me,</span>
         <span class="line">I want to offer to you.</span>
       </p>
       <p class="s09-decl-q zen ja-only" style="margin-top:1.5rem;">
-        <span class="line">まだ、出会っていない自分がいる気がする人へ。</span>
-        <span class="line">bridgeは、そんな人のための場所です。</span>
+        <span class="line">まだ、<wbr>出会っていない<wbr>自分が<wbr>いる<wbr>気が<wbr>する<wbr>人へ。</span>
+        <span class="line">bridgeは、<wbr>そんな<wbr>人の<wbr>ための<wbr>場所です。</span>
       </p>
       <p class="s09-decl-q en-only" style="margin-top:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:300;">
         <span class="line">If you sense there's a version of yourself</span>
@@ -1358,10 +1362,10 @@ body.en a.btn-line.en-only{ display:inline-block; }
       <p class="s09-sig en fu-still d6">— TAKA</p>
     </div>
     <div class="s09-cta fu-still d6">
-      <span class="s09-cta-lead ja-only">まず、あなたの「タイプ」を知ってみませんか。</span>
+      <span class="s09-cta-lead ja-only">まず、<wbr>あなたの<wbr>「タイプ」を<wbr>知ってみませんか。</span>
       <span class="s09-cta-lead en-only" style="font-family:'Cormorant Garamond',serif;">Curious about your hair personality?</span>
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="s09-cta-link" target="_blank">
-        <span class="ja-only">診断してみる（無料・30秒）→</span>
+        <span class="ja-only">診断してみる<wbr>（無料・30秒）<wbr>→</span>
         <span class="en-only">Take the free diagnosis (30 sec) →</span>
       </a>
     </div>
@@ -1372,32 +1376,32 @@ body.en a.btn-line.en-only{ display:inline-block; }
 <section class="s10">
   <div class="s10-in">
     <span class="lbl lbl-l fu">Selection</span>
-    <h2 class="s10-h zen fu d1 ja-only">このページを最後まで読んでくれたあなたへ、正直に伝えます。</h2>
+    <h2 class="s10-h zen fu d1 ja-only">この<wbr>ページを<wbr>最後まで<wbr>読んでくれた<wbr>あなたへ、<wbr>正直に<wbr>伝えます。</h2>
     <h2 class="s10-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">If you've read this far, here's the honest truth.</h2>
     <div class="s10-grid">
       <div class="fu d2">
         <p class="s10-ct for en">bridge is for you —</p>
         <ul class="s10-list s10-for">
-          <li class="ja-only">毎回「なんか違う」を繰り返してきた方</li>
+          <li class="ja-only">毎回<wbr>「なんか<wbr>違う」を<wbr>繰り返してきた<wbr>方</li>
           <li class="en-only">You've felt "something's off" after every appointment</li>
-          <li class="ja-only">髪のことで、長く信頼できる一人を探している方</li>
+          <li class="ja-only">髪の<wbr>ことで、<wbr>長く<wbr>信頼できる<wbr>一人を<wbr>探している<wbr>方</li>
           <li class="en-only">You're looking for one person to trust with your hair, long-term</li>
-          <li class="ja-only">自分のライフスタイルに合ったスタイルを作りたい方</li>
+          <li class="ja-only">自分の<wbr>ライフスタイルに<wbr>合った<wbr>スタイルを<wbr>作りたい<wbr>方</li>
           <li class="en-only">You want a style that fits your actual life</li>
-          <li class="ja-only">丁寧に生きることを、大切にしている方</li>
+          <li class="ja-only">丁寧に<wbr>生きる<wbr>ことを、<wbr>大切に<wbr>している<wbr>方</li>
           <li class="en-only">You care about doing things with intention</li>
         </ul>
       </div>
       <div class="fu d3">
         <p class="s10-ct not en">Not a fit if —</p>
         <ul class="s10-list s10-not">
-          <li class="ja-only">まず価格で選びたい方には、より良い選択肢があると思います</li>
+          <li class="ja-only">まず<wbr>価格で<wbr>選びたい<wbr>方には、<wbr>より<wbr>良い<wbr>選択肢が<wbr>あると<wbr>思います</li>
           <li class="en-only">Price is your first filter — there are better options for you</li>
-          <li class="ja-only">短時間でパパッと済ませたい方</li>
+          <li class="ja-only">短時間で<wbr>パパッと<wbr>済ませたい<wbr>方</li>
           <li class="en-only">You need something quick and efficient</li>
-          <li class="ja-only">流行りのスタイルをそのままコピーしたい方</li>
+          <li class="ja-only">流行りの<wbr>スタイルを<wbr>そのまま<wbr>コピーしたい<wbr>方</li>
           <li class="en-only">You want to copy a trending style, exactly</li>
-          <li class="ja-only">毎回新しいスタイリストを試したい方</li>
+          <li class="ja-only">毎回<wbr>新しい<wbr>スタイリストを<wbr>試したい<wbr>方</li>
           <li class="en-only">You like trying a different stylist each time</li>
         </ul>
       </div>
@@ -1411,39 +1415,39 @@ body.en a.btn-line.en-only{ display:inline-block; }
   <div class="s11-in">
     <span class="lbl fu">Self-Diagnosis</span>
     <h2 class="s11-h zen fu d1 ja-only">
-      <span class="line">自分でも気づいていない、</span>
-      <span class="line">髪との関係があるかもしれません。</span>
+      <span class="line">自分でも<wbr>気づいていない、</span>
+      <span class="line">髪との<wbr>関係が<wbr>あるかもしれません。</span>
     </h2>
     <h2 class="s11-h fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
       <span class="line">Your relationship with your hair</span>
       <span class="line">might be telling you something.</span>
     </h2>
     <p class="s11-sub fu d2 ja-only">
-      <span class="line">bridgeには3つの診断と、ひとつの遊びがあります。</span>
-      <span class="line">正解はありません。ただ、やってみると</span>
-      <span class="line">「そうか、こういうことか」と思う瞬間があるかもしれない。</span>
+      <span class="line">bridgeには<wbr>3つの<wbr>診断と、<wbr>ひとつの<wbr>遊びが<wbr>あります。</span>
+      <span class="line">正解は<wbr>ありません。<wbr>ただ、<wbr>やってみると</span>
+      <span class="line">「そうか、<wbr>こういう<wbr>ことか」と<wbr>思う<wbr>瞬間が<wbr>あるかもしれない。</span>
     </p>
     <p class="s11-sub fu d2 en-only">
       <span class="line">bridge offers three short diagnoses — and one small game.</span>
       <span class="line">There are no right answers — just moments</span>
       <span class="line">where something clicks.</span>
     </p>
-    <p class="s11-line fu d2 ja-only">気になったことがあれば、そのままLINEで話しかけてみてください。</p>
+    <p class="s11-line fu d2 ja-only">気に<wbr>なったことがあれば、<wbr>そのまま<wbr>LINEで<wbr>話しかけてみてください。</p>
     <p class="s11-line fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">If something resonates, feel free to send us a DM on Instagram.</p>
     <div class="s11-cards">
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="s11-cd fu d1" target="_blank">
         <p class="s11-cd-n en">01</p>
-        <h3 class="s11-cd-t zen ja-only">言えていないこと診断</h3>
+        <h3 class="s11-cd-t zen ja-only">言えていない<wbr>こと<wbr>診断</h3>
         <h3 class="s11-cd-t en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">The Unsaid</h3>
-        <p class="s11-cd-p ja-only">美容室でうまく伝えられない原因を6タイプに分類。あなたの「コミュニケーションのクセ」がわかります。</p>
+        <p class="s11-cd-p ja-only">美容室で<wbr>うまく<wbr>伝えられない<wbr>原因を<wbr>6タイプに<wbr>分類。<wbr>あなたの<wbr>「コミュニケーションの<wbr>クセ」が<wbr>わかります。</p>
         <p class="s11-cd-p en-only">Why is it so hard to say what you mean at the salon? Six types, one honest answer.</p>
         <span class="s11-cd-a en">Diagnose →</span>
       </a>
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/step2.html" class="s11-cd fu d2" target="_blank">
         <p class="s11-cd-n en">02</p>
-        <h3 class="s11-cd-t zen ja-only">髪のお悩み診断</h3>
+        <h3 class="s11-cd-t zen ja-only">髪の<wbr>お悩み診断</h3>
         <h3 class="s11-cd-t en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Hair Concerns</h3>
-        <p class="s11-cd-p ja-only">ボリューム・白髪・うねり・ダメージなど、今のお悩みに合ったメニューと対策をご提案します。</p>
+        <p class="s11-cd-p ja-only">ボリューム・白髪・うねり・ダメージなど、<wbr>今の<wbr>お悩みに<wbr>合った<wbr>メニューと<wbr>対策を<wbr>ご提案します。</p>
         <p class="s11-cd-p en-only">Volume, gray, frizz, damage — find the menu and approach that fits what you're dealing with now.</p>
         <span class="s11-cd-a en">Diagnose →</span>
       </a>
@@ -1451,14 +1455,14 @@ body.en a.btn-line.en-only{ display:inline-block; }
         <p class="s11-cd-n en">03</p>
         <h3 class="s11-cd-t zen ja-only">ライフスタイル診断</h3>
         <h3 class="s11-cd-t en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">Lifestyle</h3>
-        <p class="s11-cd-p ja-only">あなたの日常・価値観・望む変化から、bridgeがどうお役に立てるかを一緒に見つけていきます。</p>
+        <p class="s11-cd-p ja-only">あなたの<wbr>日常・価値観・<wbr>望む<wbr>変化から、<wbr>bridgeが<wbr>どう<wbr>お役に<wbr>立てるかを<wbr>一緒に<wbr>見つけていきます。</p>
         <p class="s11-cd-p en-only">Your daily life, your values, the change you're hoping for — let's find where bridge fits in.</p>
         <span class="s11-cd-a en">Diagnose →</span>
       </a>
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/hair-history.html?src=lp" class="s11-cd fu d4 ja-only" target="_blank" style="grid-column:1/-1;">
         <p class="s11-cd-n en">04</p>
-        <h3 class="s11-cd-t zen">髪の履歴書</h3>
-        <p class="s11-cd-p">髪は1ヶ月におよそ1cm。だから、いまの毛先が生まれた月が分かります。そこから今日までを年表にして、これからの髪を見にいく遊びです。答えも写真も、どこにも送られません。</p>
+        <h3 class="s11-cd-t zen">髪の<wbr>履歴書</h3>
+        <p class="s11-cd-p">髪は<wbr>1ヶ月に<wbr>およそ1cm。<wbr>だから、<wbr>いまの<wbr>毛先が<wbr>生まれた<wbr>月が<wbr>分かります。<wbr>そこから<wbr>今日までを<wbr>年表に<wbr>して、<wbr>これからの<wbr>髪を<wbr>見に<wbr>いく<wbr>遊びです。<wbr>答えも<wbr>写真も、<wbr>どこにも<wbr>送られません。</p>
         <span class="s11-cd-a en">Go back in time →</span>
       </a>
       <a href="https://takahair-bridge.github.io/bridge-diagnosis/hair-history.html?lang=en&amp;src=lp" class="s11-cd fu d4 en-only" target="_blank" style="grid-column:1/-1;">
@@ -1475,7 +1479,7 @@ body.en a.btn-line.en-only{ display:inline-block; }
 <section class="s12">
   <div class="s12-in">
     <div class="s12-dot fu-still"></div>
-    <p class="s12-q zen fu-still d1 ja-only">人生をもっと楽しんでほしい。その気持ちが、bridgeの出発点です。</p>
+    <p class="s12-q zen fu-still d1 ja-only">人生を<wbr>もっと<wbr>楽しんで<wbr>ほしい。<wbr>その<wbr>気持ちが、<wbr>bridgeの<wbr>出発点です。</p>
     <p class="s12-q fu-still d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">I want you to enjoy your life more. That's where bridge begins.</p>
     <span class="s12-en fu-still d2 en">Your hair. Your story. Your bridge.</span>
     <div class="s12-dot fu-still d3"></div>
@@ -1488,16 +1492,16 @@ body.en a.btn-line.en-only{ display:inline-block; }
     <p class="s13-pre en fu-fade">Discover Your Sanctuary</p>
     <div class="s13-origin zen">
       <p class="s13-origin-p fu d1 ja-only">
-        <span class="line">bridgeという名前には、想いがある。</span>
+        <span class="line">bridgeと<wbr>いう<wbr>名前には、<wbr>想いが<wbr>ある。</span>
       </p>
       <p class="s13-origin-p fu d1 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;">
         <span class="line">The name bridge means something.</span>
       </p>
       <p class="s13-origin-p fu d2 ja-only">
-        <span class="line">今のあなたと、あなたのなりたい姿の間をつなげたい。</span>
-        <span class="line">20年以上の経験が、その力になり</span>
-        <span class="line">あなたの未来が、もう少し楽しくなるなら。</span>
-        <span class="line">全力で、ともに歩みます。</span>
+        <span class="line">今の<wbr>あなたと、<wbr>あなたのなりたい<wbr>姿の<wbr>間を<wbr>つなげたい。</span>
+        <span class="line">2<wbr>0年以上の<wbr>経験が、<wbr>その<wbr>力に<wbr>なり</span>
+        <span class="line">あなたの<wbr>未来が、<wbr>もう<wbr>少し<wbr>楽しくなるなら。</span>
+        <span class="line">全力で、ともに<wbr>歩みます。</span>
       </p>
       <p class="s13-origin-p fu d2 en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
         <span class="line">Between who you are now</span>
@@ -1505,15 +1509,15 @@ body.en a.btn-line.en-only{ display:inline-block; }
         <span class="line">that's where I want to stand.</span>
         <span class="line">Twenty years of experience, entirely yours.</span>
       </p>
-      <p class="s13-origin-em fu d3 ja-only">それが、bridgeの存在理由です。</p>
+      <p class="s13-origin-em fu d3 ja-only">それが、<wbr>bridgeの<wbr>存在理由です。</p>
       <p class="s13-origin-em fu d3 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">That is why bridge exists.</p>
     </div>
     <div class="s13-div fu d2"></div>
     <div class="s13-p fu d3">
       <p class="ja-only">
-        <span class="line">「こんなこと聞いていいのかな」と思うことほど、</span>
-        <span class="line">実は大切なことだったりします。</span>
-        <span class="line">あなたのペースで、あなたの言葉で。</span>
+        <span class="line">「こんな<wbr>こと<wbr>聞いて<wbr>いいのかな」と<wbr>思う<wbr>ことほど、</span>
+        <span class="line">実は<wbr>大切な<wbr>ことだったりします。</span>
+        <span class="line">あなたの<wbr>ペースで、<wbr>あなたの<wbr>言葉で。</span>
       </p>
       <p class="en-only" style="font-family:'Cormorant Garamond',serif;font-weight:300;">
         <span class="line">The things you hesitate to ask</span>
@@ -1522,16 +1526,16 @@ body.en a.btn-line.en-only{ display:inline-block; }
       </p>
     </div>
     <a href="https://lin.ee/KR1qGTc" class="btn-line fu d3 ja-only" target="_blank">
-      まずLINEでご相談ください
+      まず<wbr>LINEで<wbr>ご相談ください
     </a>
     <a href="https://www.instagram.com/takahair_bridge/" class="btn-line btn-line-ig fu d3 en-only" target="_blank" rel="noopener">
       Say hello on Instagram
     </a>
     <div class="s13-how fu d4">
       <p class="s13-how-p zen ja-only">
-        <span class="line">LINEを開いて「はじめまして」と送るだけで大丈夫です。</span>
-        <span class="line">何を書けばいいかわからなくても、それで十分です。</span>
-        <span class="line">通常24時間以内にお返事します。</span>
+        <span class="line">LINEを<wbr>開いて<wbr>「はじめまして」と<wbr>送るだけで<wbr>大丈夫です。</span>
+        <span class="line">何を<wbr>書けばいいかわからなくても、<wbr>それで<wbr>十分です。</span>
+        <span class="line">通常24時間<wbr>以内に<wbr>お返事します。</span>
       </p>
       <p class="s13-how-p en-only" style="font-family:'Cormorant Garamond',serif;">
         <span class="line">Just send us a DM on Instagram and say "Hello." That's enough.</span>
@@ -1540,19 +1544,19 @@ body.en a.btn-line.en-only{ display:inline-block; }
       </p>
     </div>
     <a href="https://www.instagram.com/takahair_bridge/" class="s13-note en fu d5" target="_blank" style="text-decoration:none;">Instagram: @takahair_bridge</a>
-    <p class="s13-sig zen fu d6 ja-only">— あなた以上のあなたへ。</p>
+    <p class="s13-sig zen fu d6 ja-only">— あなた以上の<wbr>あなたへ。</p>
     <p class="s13-sig fu d6 en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">— To the you that you haven't met yet.</p>
   </div>
 </section>
 
 <div class="ft-diagnosis">
-  <p class="ft-diagnosis-p zen ja-only">今すぐLINEが難しい方は、<a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">診断だけでも試してみてください</a>。</p>
+  <p class="ft-diagnosis-p zen ja-only">今<wbr>すぐ<wbr>LINEが<wbr>難しい<wbr>方は、<a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">診断だけでも<wbr>試してみてください</a>。</p>
   <p class="ft-diagnosis-p en-only" style="font-family:'Cormorant Garamond',serif;">Not ready to message yet? <a href="https://takahair-bridge.github.io/bridge-diagnosis/" class="ft-diagnosis-a" target="_blank">Try the diagnosis first →</a></p>
 </div>
 
 <footer>
   <p class="ft-logo en">bridge</p>
-  <p class="ft-tag ja-only">ライフスタイルに彩とデザインを</p>
+  <p class="ft-tag ja-only">ライフスタイルに<wbr>彩と<wbr>デザインを</p>
   <p class="ft-tag en-only" style="font-family:'Cormorant Garamond',serif;font-style:italic;">Colour and design for the life you're living.</p>
   <div class="ft-links">
     <a href="https://takahair-bridge.github.io/bridge-menu/" target="_blank">Menu</a>
@@ -1614,12 +1618,12 @@ function setLang(lang) {
   } catch(e) {}
 })();
 </script>
-<!-- bridge 導線計測 v2.7 / gas_32_track.gs へ送る。Cookieなし・個人情報なし・失敗しても画面は止まらない（v2.6：経路 story と 話 ep を追加・指示35）（v2.7：?src=test を経路「test」として数え分ける・指示40） -->
+<!-- bridge 導線計測 v2.7 / gas_32_track.gs へ送る。Cookieなし・個人情報なし・失敗しても画面は止まらない（v2.6：経路 story と 話 ep を追加・指示35）（v2.7：?src=test を経路「test」として数え分ける・指示40）（v2.8：?src=card ＝お渡しカードのQRを数え分ける） -->
 <script>
 (function(){
   var EXEC = 'https://script.google.com/macros/s/AKfycbxBv2a450pD_4AqkjQgt2dwyST-xzV5Anq69es8MFdb_ZRB94M74NuemP36KD0QKX95/exec';
   var PAGE = 'lp';
-  var OK   = ['instagram','tiktok','google','hub','oversea','line','recloud','sign','direct','story','test','other'];
+  var OK   = ['instagram','tiktok','google','hub','oversea','line','recloud','sign','direct','story','test','card','other'];
 
   function src(){
     try{
