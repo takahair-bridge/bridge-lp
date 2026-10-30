@@ -812,6 +812,13 @@ body.en a.btn-line.en-only{ display:inline-block; }
 /* 改行の整え（BudouXで文節の区切りに<wbr>を入れ、その位置でだけ折り返す・v2.9） */
 body{word-break:keep-all;overflow-wrap:anywhere;line-break:strict;}
 p,h1,h2,h3,li,blockquote{text-wrap:pretty;}
+
+/* v2.11：スマホの余白を整える（上の重なり・セクション間の空きすぎ） */
+@media (max-width:768px){
+  .s01{ padding-top:6rem; min-height:100svh; }
+  .s01 > *{ flex-shrink:0; }
+  .s02,.s03,.s04,.s05,.s06,.s07,.s08,.s09,.s10,.s11{ padding-top:5.5rem; padding-bottom:5.5rem; }
+}
 </style>
 </head>
 <body>
